@@ -1,0 +1,193 @@
+/*body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #c7dbf4, #f1f6ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+*/
+
+body {
+  margin: 0;
+  height: 100vh; /* garante que o body ocupe toda a altura da tela */
+  display: flex;
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center;     /* centraliza verticalmente */
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8; /* pode trocar pelo fundo que quiser */
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* Container principal */
+.container {
+  display: flex;
+  width: 90%;
+  max-width: 1100px;
+  border: 2px solid #a3b9e4;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+}
+
+/* Lado esquerdo */
+.left {
+  flex: 1;
+  background: linear-gradient(to bottom, #d8e7fa, #bcd4f0);
+  padding: 60px 40px;
+  color: #003366;
+  border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.left h2 {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 50px;
+}
+
+/* Depoimento */
+.depoimento {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  max-width: 350px;
+}
+
+.depoimento img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.estrelas {
+  color: #ffb400;
+  margin-left: 4px;
+}
+
+.local {
+  display: block;
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 2px;
+}
+
+.depoimento p {
+  font-size: 0.85rem;
+  color: #444;
+  margin-top: 8px;
+}
+
+/* Lado direito */
+.right {
+  flex: 1;
+  position: relative;
+  background: #ffffff;
+  padding: 80px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 90px;
+}
+
+/* Área de login */
+.login-area {
+  text-align: center;
+   margin-top: 15%;
+}
+
+.login-area h3 {
+  color: #002d6b;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.login-area input {
+  width: 350px;
+  padding: 14px;
+  border: 2px dashed #a3b9e4;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.criar-conta {
+  color: #002d6b;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Botões */
+.botoes {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 60px;
+}
+
+button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.2s ease;
+}
+
+/* Voltar */
+.voltar {
+  background: linear-gradient(to bottom, #c7dbf6, #a2bde8);
+  color: #003366;
+}
+
+.voltar:hover {
+  background: linear-gradient(to bottom, #a5c3eb, #8db2e0);
+}
+
+/* Prosseguir */
+.prosseguir {
+  background: linear-gradient(to bottom, #5593e6, #2f6ed8);
+  color: white;
+}
+
+.prosseguir:hover {
+  background: linear-gradient(to bottom, #4b85d1, #265cc0);
+}
+
+/* Responsividade */
+@media (max-width: 960px) {
+  .container {
+    flex-direction: column;
+  }
+  .left {
+    border-right: none;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  .login-area input {
+    width: 90%;
+  }
+  .botoes {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - Pet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Lado Esquerdo -->
+    <div class="left">
+      <h2>
+        Localizar seu pet nunca foi tão fácil!<br>
+        Veja quantos usuários conseguiram<br>
+        reencontrar seu pet perdido.<br>
+        Torcemos que você também obtenha sucesso.
+      </h2>
+
+      <div class="depoimento">
+        <img src="fotojuliana.jpg" alt="Usuário">
+        <div>
+          <strong>Juliana</strong>
+          <span class="local">Cotia - SP</span>
+          <p>"Uma moça estava cuidando dela e o filho viu o anúncio e nos contatou, foram campanhas e não desistiram de encontrar a pet de vcs 💕🙏"</p>
+        </div>
+      </div>
+    </div>
+    <!-- Lado Direito -->
+    <div class="right">
+      <img src="logo_pag2.png" alt="Logo coração" class="logo">
+
+      <form>
+        <label for="raca">Raça (opcional)</label>
+        <input type="text" id="raca" placeholder="Digite a raça do pet">
+
+        <label for="porte">Porte (opcional)</label>
+        <input type="text" id="porte" placeholder="Ex: pequeno, médio, grande">
+
+        <label for="cor">Cor Predominante (opcional)</label>
+        <input type="text" id="cor" placeholder="Ex: marrom, preto, branco...">
+
+        <label for="olhos">Cor dos Olhos (opcional)</label>
+        <input type="text" id="olhos" placeholder="Ex: castanhos, azuis...">
+
+        <label for="idade">Idade (opcional)</label>
+        <input type="text" id="idade" placeholder="Ex: 2 anos">
+
+        <div class="botoes">
+          <button type="button" class="voltar" onclick="window.history.back()">Voltar</button>
+          <button type="submit" class="prosseguir">Prosseguir</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</body>
+</html>

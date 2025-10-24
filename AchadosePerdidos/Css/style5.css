@@ -1,0 +1,163 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Corpo da página */
+body {
+  background: linear-gradient(to right, #c7dbf4, #f1f6ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container principal de duas colunas */
+.container-duas-colunas {
+  display: flex;
+  flex-wrap: wrap;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  max-width: 1000px;
+  width: 90%;
+}
+
+/* Coluna esquerda */
+.coluna-esquerda {
+  flex: 1;
+  padding: 40px;
+  background: #e6f0fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+}
+
+.coluna-esquerda h2 {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Coluna direita */
+.coluna-direita {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.coluna-direita .logo {
+  width: 150px;
+  margin-bottom: 30px;
+}
+
+/* Formulário */
+.form-recompensa {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-group input[type="text"] {
+  width: 100%;
+  padding: 10px 15px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+.form-group input[type="text"]:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+/* Botão Ligado/Desligado */
+.btn-toggle {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn-toggle.desligado {
+  background: #f44336;
+}
+
+.btn-toggle.ligado {
+  background: #4caf50;
+}
+
+/* Botões Voltar / Prosseguir */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.form-actions input[type="submit"] {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-voltar {
+  background: #ccc;
+  color: #333;
+}
+
+.btn-voltar:hover {
+  background: #b3b3b3;
+}
+
+.btn-prosseguir {
+  background: #007bff;
+  color: #fff;
+}
+
+.btn-prosseguir:hover {
+  background: #0056b3;
+}
+
+/* Campo de valor */
+#campoValor {
+  display: none; /* Escondido inicialmente */
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .container-duas-colunas {
+    flex-direction: column;
+  }
+
+  .coluna-esquerda, .coluna-direita {
+    padding: 20px;
+  }
+
+  .coluna-esquerda h2 {
+    font-size: 1.3rem;
+  }
+}

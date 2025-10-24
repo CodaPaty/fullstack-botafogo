@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #bcd4f0 0%, #e9f2ff 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container geral */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 90%;
+  max-width: 1200px;
+  background: transparent;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Lado esquerdo */
+.left {
+  flex: 1;
+  background: rgba(137, 198, 236, 0.3);
+  padding: 60px 40px;
+  color: #003366;
+  border-right: 1px solid rgba(0,0,0,0.1);
+}
+
+.left h2 {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  margin-bottom: 60px;
+}
+
+/* Caixa de depoimento */
+.depoimento {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 350px;
+}
+
+.depoimento img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.depoimento strong {
+  color: #222;
+  font-size: 1rem;
+  display: block;
+}
+
+.depoimento p {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.local {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* Lado direito */
+.right {
+  flex: 1;
+  background: #ffffff;
+  padding: 60px 50px;
+  position: relative;
+}
+
+.logo {
+  width: 100px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+form {
+  margin-top: 80px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #002d6b;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 2px solid #b3cef6;
+  border-radius: 8px;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+  font-size: 1rem;
+}
+
+/* Botões */
+.botoes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+button {
+  padding: 12px 28px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.2s ease;
+}
+
+/* Botão voltar */
+.voltar {
+  background: linear-gradient(to bottom, #b8d5f3, #90bce7);
+  color: #003366;
+}
+
+.voltar:hover {
+  background: linear-gradient(to bottom, #a2c6ee, #7fb0e0);
+  transform: translateY(-1px);
+}
+
+/* Botão prosseguir */
+.prosseguir {
+  background: #007bff;
+  color: white;
+}
+
+.prosseguir:hover {
+  background: #0056b3;
+}
+
+/* Responsividade */
+@media (max-width: 960px) {
+  .container {
+    flex-direction: column;
+  }
+  .right {
+    padding: 40px 20px;
+  }
+  .left {
+    border-right: none;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  .botoes {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
