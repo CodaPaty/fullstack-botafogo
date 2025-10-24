@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Cadastro - Petinder</title>
+    <style>
+        /* Estilos da página e do fundo */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            /* ADICIONADO: Imagem de fundo com um gradiente por cima para dar cor */
+            background: linear-gradient(120deg, #3ec1e24b, rgba(77, 199, 255, 0.185)), url('https://i.ibb.co/Kc6gj85F/fundo-login.png');
+            background-size: cover; /* Faz a imagem cobrir toda a tela */
+            background-position: center; /* Centraliza a imagem */
+            background-attachment: fixed; /* Mantém a imagem fixa durante a rolagem */
+            color: #000000;
+        }
+
+        /* Wrapper para alinhar a logo e o container */
+        .login-wrapper {
+            display: flex;
+            flex-direction: column; /* Empilha os itens verticalmente */
+            justify-content: center; /* Centraliza verticalmente */
+            align-items: center;     /* Centraliza horizontalmente */
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* Estilo da logo */
+        .logo {
+            width: 200px; /* Tamanho mais adequado para uma página de login */
+            height: auto;
+            margin-bottom: 25px; /* Espaço entre a logo e o formulário */
+        }
+        
+        /* O CONTAINER COM EFEITO DE VIDRO (GLASSMORPHISM) */
+        .container {
+            background: #d6e4f948; /* Aumentei um pouco a opacidade para melhor leitura */
+            backdrop-filter: blur(20px); /* O filtro de desfoque que cria o efeito */
+            -webkit-backdrop-filter: blur(10px); /* Para compatibilidade com Safari */
+            border-radius: 16px; /* Cantos mais arredondados */
+            border: 1px solid #ffffff00; /* Borda sutil */
+            box-shadow: 0 8px 32px 0 #00000096; /* Sombra para dar profundidade */
+            
+            padding: 30px 40px;
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+            color: #000000; /* Alterado para branco para melhor contraste com o fundo */
+            text-shadow: 0 4px 4px rgba(148, 156, 255, 0.3);
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #000000;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.2); /* Fundo sutil para os inputs */
+            color: #fff;
+            font-size: 16px;
+        }
+
+        input::placeholder { /* Estilo para o texto de placeholder */
+            color: rgba(0, 0, 0, 0.7);
+        }
+        
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #ffffff; /* Botão branco sólido para contraste */
+            color: #000000; /* Cor do texto do botão para combinar com o tema */
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        button:hover {
+            transform: scale(1.03); /* Efeito de crescimento sutil */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-wrapper">
+        <img src="Assets\Img\logo contrastante petinder.png" alt="Logo Petinder" class="logo">
+        
+        <div class="container">
+            <h1>Crie Sua Conta</h1>
+            
+            <form action="/cadastrar" method="POST">
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome aqui" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" placeholder="Mínimo 6 caracteres" required minlength="6">
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirma_senha">Confirmar Senha</label>
+                    <input type="password" id="confirma_senha" name="confirma_senha" placeholder="Repita sua senha" required>
+                </div>
+
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
