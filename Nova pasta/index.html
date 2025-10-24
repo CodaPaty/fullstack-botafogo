@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office"
+  xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PeTinder</title>
+  <link rel="stylesheet" href="index.css" />
+
+
+</head>
+
+<body>
+
+  <nav class="superior">
+    <h1 class="icone">🐾 PeTinder</h1>
+    <input type="search" placeholder="Pesquisar..." />
+    <button class="btn-Cadastrar">Cadastrar</button>
+    <button class="btn-Entrar">Entrar</button>
+  </nav>
+
+  <main class="container">
+
+    <aside class="sidebar-left">
+      <ul>
+        <li><a href="forum.html" class="active">Home</a></li>
+        <li><a href="index.html">Menu</a></li>
+        <li><a href="suasQuestoes.html">Suas respostas</a></li>
+        <li><a href="tags.html">Tags</a></li>
+        <li><a href="ranking.html">Ranking</a></li>
+      </ul>
+    </aside>
+
+
+    <section class="content-center">
+      <div class="post-card" id="card-top">
+        <div class="post-header">
+          <div class="avatar"></div>
+          <div class="post-info">
+            <h4>@Juliana</h4>
+            <span>12 November 2020 19:35</span>
+          </div>
+        </div>
+
+        <h3 class="post-title">Configurações</h3>
+
+        <div class="post-content">
+          <ul id="config-list">
+            <li onclick="toggleInput('nickname')">
+              <strong class="config-option">Nickname</strong>
+              <span>alterar nome de exibição</span>
+              <div id="input-nickname" class="input-area">
+                <input type="text" placeholder="Novo nickname" />
+              </div>
+            </li>
+
+            <li onclick="toggleInput('usuario')">
+              <strong class="config-option">Nome de usuário</strong>
+              <span>alterar nome de usuário</span>
+              <div id="input-usuario" class="input-area">
+                <input type="text" placeholder="Novo nome de usuário" />
+              </div>
+            </li>
+
+            <li onclick="toggleInput('email')">
+              <strong class="config-option">Email</strong>
+              <span>alterar email</span>
+              <div id="input-email" class="input-area">
+                <input type="email" placeholder="Novo email" />
+              </div>
+            </li>
+
+            <li onclick="toggleInput('senha')">
+              <strong class="config-option">Senha</strong>
+              <span>alterar senha</span>
+              <div id="input-senha" class="input-area">
+                <input type="password" placeholder="Nova senha" />
+              </div>
+            </li>
+
+            <li onclick="toggleInput('genero')">
+              <strong class="config-option">Gênero</strong>
+              <span>alterar seu gênero</span>
+              <div id="input-genero" class="input-area">
+                <select>
+                  <option>Masculino</option>
+                  <option>Feminino</option>
+                  <option>Outro</option>
+                </select>
+              </div>
+            </li>
+
+            <li onclick="toggleInput('idade')">
+              <strong class="config-option">Idade</strong>
+              <span>alterar sua data de nascimento</span>
+              <div id="input-idade" class="input-area">
+                <input type="date" />
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <button class="btn-salvar">💾 Salvar Informações</button>
+      </div>
+    </section>
+
+
+    <aside class="sidebar-right">
+      <div class="widget">
+        <h3>⭐ Posts Importantes</h3>
+        <ul>
+          <li>• <a href="#">Leia as regras da comunidade</a></li>
+        </ul>
+      </div>
+
+      <div class="widget">
+        <h3>🔗 Links</h3>
+        <ul>
+          <li><a href="#">Ajuda</a></li>
+          <li><a href="#">Melhores práticas</a></li>
+          <li><a href="#">Acessar o fórum</a></li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+  <script src="index.js"></script>
+</body>
+
+</html>
