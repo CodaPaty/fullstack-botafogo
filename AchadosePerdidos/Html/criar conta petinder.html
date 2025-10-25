@@ -5,45 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Cadastro - Petinder</title>
     <style>
-        /* Estilos da página e do fundo */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             min-height: 100vh;
-            /* ADICIONADO: Imagem de fundo com um gradiente por cima para dar cor */
             background: linear-gradient(120deg, #3ec1e24b, rgba(77, 199, 255, 0.185)), url('https://i.ibb.co/Kc6gj85F/fundo-login.png');
-            background-size: cover; /* Faz a imagem cobrir toda a tela */
-            background-position: center; /* Centraliza a imagem */
-            background-attachment: fixed; /* Mantém a imagem fixa durante a rolagem */
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed;
             color: #000000;
         }
-
-        /* Wrapper para alinhar a logo e o container */
         .login-wrapper {
             display: flex;
-            flex-direction: column; /* Empilha os itens verticalmente */
-            justify-content: center; /* Centraliza verticalmente */
-            align-items: center;     /* Centraliza horizontalmente */
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;     
             min-height: 100vh;
             padding: 20px;
             box-sizing: border-box;
         }
 
-        /* Estilo da logo */
         .logo {
-            width: 200px; /* Tamanho mais adequado para uma página de login */
+            width: 200px; 
             height: auto;
-            margin-bottom: 25px; /* Espaço entre a logo e o formulário */
+            margin-bottom: 25px; 
         }
-        
-        /* O CONTAINER COM EFEITO DE VIDRO (GLASSMORPHISM) */
         .container {
-            background: #d6e4f948; /* Aumentei um pouco a opacidade para melhor leitura */
-            backdrop-filter: blur(20px); /* O filtro de desfoque que cria o efeito */
-            -webkit-backdrop-filter: blur(10px); /* Para compatibilidade com Safari */
-            border-radius: 16px; /* Cantos mais arredondados */
-            border: 1px solid #ffffff00; /* Borda sutil */
-            box-shadow: 0 8px 32px 0 #00000096; /* Sombra para dar profundidade */
+            background: #d6e4f948; 
+            backdrop-filter: blur(20px); 
+            -webkit-backdrop-filter: blur(10px); 
+            border-radius: 16px; 
+            border: 1px solid #ffffff00; 
+            box-shadow: 0 8px 32px 0 #00000096; 
             
             padding: 30px 40px;
             width: 100%;
@@ -55,7 +48,7 @@
             text-align: center;
             margin-bottom: 25px;
             font-size: 1.8em;
-            color: #000000; /* Alterado para branco para melhor contraste com o fundo */
+            color: #000000; 
             text-shadow: 0 4px 4px rgba(148, 156, 255, 0.3);
         }
         
@@ -79,20 +72,20 @@
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 8px;
             box-sizing: border-box;
-            background-color: rgba(255, 255, 255, 0.2); /* Fundo sutil para os inputs */
+            background-color: rgba(255, 255, 255, 0.2); 
             color: #fff;
             font-size: 16px;
         }
 
-        input::placeholder { /* Estilo para o texto de placeholder */
+        input::placeholder { 
             color: rgba(0, 0, 0, 0.7);
         }
         
         button {
             width: 100%;
             padding: 12px;
-            background-color: #ffffff; /* Botão branco sólido para contraste */
-            color: #000000; /* Cor do texto do botão para combinar com o tema */
+            background-color: #ffffff; 
+            color: #000000; 
             font-weight: bold;
             border: none;
             border-radius: 8px;
@@ -103,7 +96,7 @@
         }
         
         button:hover {
-            transform: scale(1.03); /* Efeito de crescimento sutil */
+            transform: scale(1.03);
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
     </style>
