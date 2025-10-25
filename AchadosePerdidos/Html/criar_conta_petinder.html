@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Cadastro - Petinder</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(120deg, #3ec1e24b, rgba(77, 199, 255, 0.185)), url('https://i.ibb.co/Kc6gj85F/fundo-login.png');
+            background-size: cover; 
+            background-position: center; 
+            background-attachment: fixed;
+            color: #000000;
+        }
+        .login-wrapper {
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;     
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            width: 200px; 
+            height: auto;
+            margin-bottom: 25px; 
+        }
+        .container {
+            background: #d6e4f948; 
+            backdrop-filter: blur(20px); 
+            -webkit-backdrop-filter: blur(10px); 
+            border-radius: 16px; 
+            border: 1px solid #ffffff00; 
+            box-shadow: 0 8px 32px 0 #00000096; 
+            
+            padding: 30px 40px;
+            width: 100%;
+            max-width: 400px;
+            box-sizing: border-box;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+            color: #000000; 
+            text-shadow: 0 4px 4px rgba(148, 156, 255, 0.3);
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #000000;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.2); 
+            color: #fff;
+            font-size: 16px;
+        }
+
+        input::placeholder { 
+            color: rgba(0, 0, 0, 0.7);
+        }
+        
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #ffffff; 
+            color: #000000; 
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-wrapper">
+        <img src="Assets\Img\logo contrastante petinder.png" alt="Logo Petinder" class="logo">
+        
+        <div class="container">
+            <h1>Crie Sua Conta</h1>
+            
+            <form action="/cadastrar" method="POST">
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome aqui" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" placeholder="Mínimo 6 caracteres" required minlength="6">
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirma_senha">Confirmar Senha</label>
+                    <input type="password" id="confirma_senha" name="confirma_senha" placeholder="Repita sua senha" required>
+                </div>
+
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
