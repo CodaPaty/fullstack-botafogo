@@ -64,6 +64,77 @@ button:hover {
   box-shadow: 0 4px 12px rgba(104, 85, 224, 0.3);
 }
 
+/* Custom Modal Styles for Login/Register */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none; /* Escondido por padrão */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.modal-overlay.open {
+  display: flex;
+  opacity: 1;
+}
+
+.modal-conteudo {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 400px;
+  transform: translateY(-50px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.modal-overlay.open .modal-conteudo {
+  transform: translateY(0);
+}
+
+.modal-conteudo h3 {
+  color: #6855e0;
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.modal-conteudo input[type="text"],
+.modal-conteudo input[type="password"],
+.modal-conteudo input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.modal-acoes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn-cancelar {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.btn-cancelar:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-1px);
+  box-shadow: none;
+}
+
 /* GRID LAYOUT */
 .container {
   display: grid;
@@ -765,227 +836,244 @@ li {
   background-color: #357ac9;
 }
 .user-responses-wrap {
-    padding: 20px;
-    border-bottom: 1px solid #eee; 
+  padding: 20px;
+  border-bottom: 1px solid #eee;
 }
 
 .section-title {
-    margin-top: 0;
-    margin-bottom: 15px;
-    color: #333; 
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
 }
 
 .filter-bar {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .filter-bar .filter-btn {
-    background-color: transparent;
-    border: 1px solid #ccc;
-    padding: 8px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    color: #555;
-    transition: all 0.2s;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  color: #555;
+  transition: all 0.2s;
 }
 
 .filter-bar .filter-btn:hover {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
 
 /* Cor AZUL para o botão de filtro ativo */
 .filter-bar .filter-btn.active {
-    background-color: #3498db; 
-    color: white;
-    border-color: #3498db;
+  background-color: #3498db;
+  color: white;
+  border-color: #3498db;
 }
 
 .filter-bar .search-input {
-    padding: 8px 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    flex-grow: 1;
-    max-width: 300px;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  flex-grow: 1;
+  max-width: 300px;
 }
 
 .user-responses-list {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .response-card {
-    padding: 15px;
-    border: 1px solid #eee;
-    border-radius: 8px;
-    background-color: #ffffff; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra mais bonita */
+  padding: 15px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra mais bonita */
 }
 
 .question-header {
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
 }
 
 .original-question-title {
-    font-size: 1.1em;
-    font-weight: 600;
-    color: #333;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #333;
 }
 
 .user-answer-content {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 15px;
 }
 
 .avatar-small {
-    width: 30px;
-    height: 30px;
-    min-width: 30px;
-    border-radius: 50%;
-    background-color: #3498db; /* Avatar com cor de destaque AZUL */
+  width: 30px;
+  height: 30px;
+  min-width: 30px;
+  border-radius: 50%;
+  background-color: #3498db; /* Avatar com cor de destaque AZUL */
 }
 
 .answer-body {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .answer-meta {
-    display: block;
-    font-size: 0.8em;
-    color: #777;
-    margin-bottom: 5px;
+  display: block;
+  font-size: 0.8em;
+  color: #777;
+  margin-bottom: 5px;
 }
 
 .answer-text {
-    margin: 0;
-    line-height: 1.4;
-    color: #333;
+  margin: 0;
+  line-height: 1.4;
+  color: #333;
 }
 
 .response-stats {
-    padding-top: 10px;
-    border-top: 1px solid #eee;
-    display: flex;
-    gap: 15px;
-    font-size: 0.9em;
-    color: #555;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+  display: flex;
+  gap: 15px;
+  font-size: 0.9em;
+  color: #555;
 }
 
 /* Cor AZUL para a solução aceita */
 .accepted-solution {
-    color: #3498db; 
-    font-weight: bold;
+  color: #3498db;
+  font-weight: bold;
 }
+
 /* ========================================================= */
 /* Media Query para Responsividade (Telas Pequenas, Ex: Celular) */
 /* ========================================================= */
 @media (max-width: 768px) {
+  /* Variável para a altura mínima da sidebar-left */
+  :root {
+    --sidebar-left-min-height: 45px;
+  }
 
-    /* Variável para a altura mínima da sidebar-left */
-    :root {
-        --sidebar-left-min-height: 45px;
-    }
+  /* 1. Navbar Principal (.superior) - Fixa */
+  .superior {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
 
-    /* 1. Navbar Principal (.superior) - Fixa */
-    .superior {
-        flex-direction: row; 
-        flex-wrap: wrap; 
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-        
-        position: fixed; 
-        top: 0;
-        z-index: 100; 
-        width: 100%;
-        background-color: white; 
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
-        height: auto; 
-    }
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: auto;
+  }
 
-    .superior .icone {
-        order: 1;
-        flex-basis: 50%; 
-        margin: 0;
-    }
-    
-    .superior input[type="search"] {
-        order: 3; 
-        width: 100%; 
-        margin: 10px 0 0 0; 
-        padding: 8px;
-    }
+  .superior .icone {
+    order: 1;
+    flex-basis: 50%;
+    margin: 0;
+  }
 
-    .superior .btn-Cadastrar, 
-    .superior .btn-Entrar {
-        order: 2; 
-        margin: 0 0 0 5px; 
-    }
-    
-    /* ---------------------------------------------------- */
-    /* 2. Sidebar da Esquerda (Nav Secundária Fixa e Corrigida) */
-    /* ---------------------------------------------------- */
-    .sidebar-left {
-        order: 1; 
-        width: 100%;
-        padding: 0;
-        
-        position: fixed;
-        /* Define a posição superior como a borda inferior da nav superior.
+  .superior input[type="search"] {
+    order: 3;
+    width: 100%;
+    margin: 10px 0 0 0;
+    padding: 8px;
+    display: none;
+  }
+
+  .superior .btn-Cadastrar,
+  .superior .btn-Entrar {
+    order: 2;
+    margin: 0 0 0 5px;
+  }
+
+  /* ---------------------------------------------------- */
+  /* 2. Sidebar da Esquerda (Nav Secundária Fixa e Corrigida) */
+  /* ---------------------------------------------------- */
+  .sidebar-left {
+    order: 1;
+
+    position: fixed;
+    /* Define a posição superior como a borda inferior da nav superior.
            Como a altura é dinâmica, usamos uma medida de viewport + um fallback seguro.
            A altura real será calculada via JS. Por agora, usamos um valor alto seguro. */
-        top: 140px; /* VALOR CHAVE: Ajustado para ser maior que a nav superior */
-        z-index: 99; 
-        
-        background-color: #f8f8f8; 
-        border-bottom: 1px solid #eee;
-        overflow-x: auto; 
-        white-space: nowrap; 
-        height: var(--sidebar-left-min-height); /* Altura fixa */
-    }
-    
-    .sidebar-left ul {
-        display: flex;
-        list-style: none;
-        padding: 0 10px;
-        margin: 0;
-        justify-content: flex-start;
-        height: 100%;
-        align-items: center;
-    }
-    
-    /* ---------------------------------------------------- */
-    /* 3. Container Principal (Garante o Espaço) */
-    /* ---------------------------------------------------- */
-    .container {
-        display: flex;
-        flex-direction: column; 
-        /* O valor total de padding é a altura da nav superior + a altura da sidebar-left (45px) */
-        padding-top: 185px; /* (140px da nav.superior + 45px da sidebar-left) */
-    }
-    
-    /* 4. Conteúdo Central e Sidebar Direita (Empilhamento) */
-    .content-center {
-        order: 2; 
-        width: 100%;
-        padding: 10px;
-    }
+    top: 0; /* VALOR CHAVE: Ajustado para ser maior que a nav superior */
+    z-index: 101;
+    width: 250px;
+    height: 100vh;
+    left: -250px;
+    transition: left 0.3s ease-in-out;
 
-    .sidebar-right {
-        order: 3; 
-        width: 100%;
-        padding: 10px;
-        margin-top: 20px;
-    }
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #eee;
+    white-space: nowrap;
+    height: var(--sidebar-left-min-height); /* Altura fixa */
+  }
+
+  .sidebar-left ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 60px;
+    list-style: none;
+    padding: 0 0;
+    margin: 0;
+    justify-content: flex-start;
+    height: auto;
+    align-items: center;
+  }
+
+  .sidebar-left ul {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 0;
+    height: auto;
+  }
+
+  .sidebar-left li a {
+    width: 100%;
+  }
+
+  /* ---------------------------------------------------- */
+  /* 3. Container Principal (Garante o Espaço) */
+  /* ---------------------------------------------------- */
+  .container {
+    display: flex;
+    flex-direction: column;
+    /* O valor total de padding é a altura da nav superior + a altura da sidebar-left (45px) */
+    padding-top: 140px; /* (140px da nav.superior + 45px da sidebar-left) */
+  }
+
+  /* 4. Conteúdo Central e Sidebar Direita (Empilhamento) */
+  .content-center {
+    order: 2;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .sidebar-right {
+    order: 3;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+  }
 }
-.navSeparator{
+
+.navSeparator {
   color: #e0dfdf;
   width: 92%;
   margin-left: 4%;
@@ -995,7 +1083,7 @@ li {
   background: #fff;
   border-radius: 10px;
   padding: 25px 30px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   flex: 1;
   max-width: 950px;
   margin: 0 auto;
@@ -1019,7 +1107,7 @@ li {
 .newpost-container input:focus,
 .newpost-container textarea:focus {
   border-color: #3b82f6;
-  box-shadow: 0 0 0 2px rgba(59,130,246,0.1);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1);
 }
 
 .newpost-container textarea {
@@ -1077,7 +1165,7 @@ li {
   background: #fff;
   border-radius: 10px;
   padding: 18px 22px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   font-size: 14px;
 }
 
@@ -1109,7 +1197,7 @@ li {
   background: #fff;
   border-radius: 10px;
   padding: 30px 40px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   flex: 1;
   max-width: 950px;
   margin: 0 auto;
@@ -1157,7 +1245,7 @@ li {
 
 .userpost-card:hover {
   background: #f3f4f6;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
 .userpost-info {

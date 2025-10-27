@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suas Questões | PeTinder</title>
+    <link
+      rel="stylesheet"
+      href="/forum/fullstack-botafogo/forum/css/index.css" />
+  </head>
+
+  <body>
+    <nav class="superior">
+      <h1 class="icone">🐾 PeTinder</h1>
+      <input type="search" placeholder="Pesquisar..." />
+      <button class="btn-Cadastrar">Cadastrar</button>
+      <button class="btn-Entrar">Entrar</button>
+    </nav>
+
+    <main class="container">
+      <aside class="sidebar-left">
+        <ul>
+          <li><a href="forum.html">Home</a></li>
+          <li><a href="index.html">Menu</a></li>
+          <li><a href="#" class="active">Suas respostas</a></li>
+          <li><a href="tags.html">Tags</a></li>
+          <li><a href="ranking.html">Ranking</a></li>
+        </ul>
+      </aside>
+
+      <section class="content-center">
+        <!-- CONTEÚDO CENTRAL -->
+        <div class="content-center">
+          <div class="newpost-container">
+            <select>
+              <option>Escolher Categoria</option>
+              <option>cachorro</option>
+              <option>gato</option>
+              <option>tartaruga</option>
+            </select>
+
+            <input type="text" placeholder="Título" />
+
+            <textarea placeholder="Digite seu post"></textarea>
+
+            <div class="newpost-actions">
+              <button class="btn-image">📎 Adicionar Imagem</button>
+              <div>
+                <button class="btn-draft">Salvar rascunho</button>
+                <button class="btn-publish">Publicar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="sidebar-right">
+        <div class="widget">
+          <h3>⭐ Posts Importantes</h3>
+          <ul>
+            <li>• <a href="#">Leia as regras da comunidade</a></li>
+          </ul>
+        </div>
+
+        <div class="widget">
+          <h3>🔗 Links</h3>
+          <ul>
+            <li><a href="#">Ajuda</a></li>
+            <li><a href="#">Melhores práticas</a></li>
+            <li><a href="#">Acessar o fórum</a></li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
