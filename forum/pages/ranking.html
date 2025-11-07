@@ -4,9 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ranking | PeTinder</title>
-    <link
-      rel="stylesheet"
-      href="/forum/fullstack-botafogo/forum/css/index.css" />
+    <link rel="stylesheet" href="../css/index.css" />
   </head>
 
   <body>
@@ -20,7 +18,7 @@
     <main class="container">
       <aside class="sidebar-left">
         <ul>
-          <li><a href="/forum/fullstack-botafogo/forum/forum.html">Home</a></li>
+          <li><a href="../forum.html">Home</a></li>
           <li><a href="">Menu</a></li>
           <li><a href="suas_questoes.html">Suas respostas</a></li>
           <li><a href="tags.html">Tags</a></li>
@@ -386,5 +384,41 @@
         </div>
       </aside>
     </main>
+
+    <div id="login-modal" class="modal-overlay">
+      <div class="modal-conteudo">
+        <h3>Entrar no PeTinder</h3>
+        <input
+          type="text"
+          id="login-username"
+          placeholder="Nome de usuário ou Email" />
+        <input type="password" id="login-password" placeholder="Senha" />
+        <div class="modal-acoes">
+          <button id="login-submit" class="btn-Entrar">Entrar</button>
+          <button id="login-close" class="btn-cancelar">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="register-modal" class="modal-overlay">
+      <div class="modal-conteudo">
+        <h3>Cadastre-se no PeTinder</h3>
+        <input type="email" id="register-email" placeholder="Email" />
+        <input
+          type="password"
+          id="register-password"
+          placeholder="Escolha um senha" />
+        <input
+          type="password"
+          id="registro-confirm-password"
+          placeholder="Confirme a senha" />
+        <div class="modal-acoes">
+          <button id="register-submit" class="btn-Cadastrar">Cadastrar</button>
+          <button id="register-close" class="btn-cancelar">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/index.js"></script>
   </body>
 </html>

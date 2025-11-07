@@ -7,6 +7,17 @@ function toggleInput(field) {
   });
 
   const el = document.getElementById("input-" + field);
+  if (!el) return;
+
+  const isVisible = el.style.display == "block";
+
+  document.querySelectorAll(".input-area").forEach((input) => {
+    input.style.display = "none";
+  });
+
+  if (!isVisible) {
+    el.style.display = "block";
+  }
 }
 
 document.querySelectorAll(".comment-btn").forEach((btn) => {
@@ -52,8 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Executa sempre que a janela for redimensionada (para lidar com rotação de tela)
   window.addEventListener("resize", adjustLayoutForMobile);
-
-  //////////////////////////////////////////////////
 });
 
 // Lógica para Modais de Login e Cadastro
