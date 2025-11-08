@@ -1,17 +1,241 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
-
+<html lang="pt-BR" data-bs-spy="scroll" data-bs-target="#nav-menu" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>PeTinder - Onde reencontros acontecem com 1 clique</title>
- <link rel="stylesheet" href="/assets/css/style_index.css"/> 
+    <meta charset="UTF-Op">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeTinder - Onde reencontros acontecem</title>
 
- <meta name="keywords" content="pet, tinder, petinder, encontre, busque, localize">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
- <meta name="author" content="jp :)">
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
- <meta name="description" content="">
+    <!-- CSS Personalizado para ser Fiel ao Design -->
+    <style>
+        /* Definindo as variáveis de cor (AGORA AZUL) */
+        :root {
+            --cor-primaria: #0d6efd; /* Azul Claro (Bootstrap Primary) */
+            --cor-escura: #1E1E1E;   /* Fundo escuro */
+            --cor-clara: #F7F7F7;
+            --bs-primary: var(--cor-primaria);
+            --bs-primary-rgb: 13, 110, 253;
+        }
+
+        /* Aplicando a fonte Poppins globalmente */
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden; /* Evitar scroll horizontal */
+            /* Adiciona padding no topo para compensar a navbar fixa */
+            padding-top: 82px; 
+            background-color: #F7F7F7; /* NOVO: Cor de fundo principal */
+        }
+
+        /* --- Seção Menu Links (AGORA NO TOPO) --- */
+        #nav-menu {
+            /* position: sticky; */ /* Removido - agora é fixed-top via classe Bootstrap */
+            z-index: 1020;
+            background-color: #BDD6FB; /* NOVO: Cor da Navbar */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Logo na Navbar */
+        .navbar-brand-logo {
+            color: var(--cor-primaria) !important;
+            font-weight: 800; /* Extra-bold */
+            font-size: 2.25rem; /* Tamanho do logo */
+        }
+
+        /* Estilo dos links do menu */
+        #nav-menu .nav-link {
+            color: var(--cor-escura); /* MUDANÇA: Cor do texto (preto) */
+            font-weight: 600;
+            padding: 1rem 0.5rem;
+            margin: 0 0.5rem;
+            border-bottom: 3px solid transparent;
+        }
+
+        /* Estilo do link ATIVO (quando rola a página) */
+        #nav-menu .nav-link:hover,
+        #nav-menu .nav-link.active {
+            color: var(--cor-primaria);
+            border-bottom-color: var(--cor-primaria);
+        }
+
+        /* --- Seção Hero (Topo) --- */
+        #hero {
+            min-height: 72vh; /* Ocupa a tela inteira */
+            background-color: var(--cor-escura); /* Cor de fallback */
+            
+            /* Imagem de fundo (placeholder) e Overlay escuro */
+            background-image: url(/AchadosePerdidos/img/banner-index.png);
+            background-size: cover;
+            background-position: center;
+            
+            /* Ajuste para centralizar conteúdo */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: -82px; /* Compensa o padding-top do body para a hero ocupar a tela cheia */
+        }
+
+        .slogan {
+            color: #0D6EFD;
+            padding-top: 8rem;
+            padding-bottom: 2rem;
+        }
+
+        .h_sections {
+            color: #0D6EFD;
+            padding-bottom: 1rem;
+        }
+
+        /* Título principal */
+        .hero-content h1 {
+            font-weight: 800; /* Extra-bold */
+            font-size: clamp(3rem, 7vw, 5.5rem); /* Responsivo */
+            line-height: 1.1;
+        }
+
+        /* --- Botões Personalizados --- */
+        .btn {
+            padding: 0.75rem 1.75rem;
+            border-radius: 50rem; /* rounded-pill */
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-buscar {
+            padding: 0.75rem 2rem;
+            border-radius: 50rem; /* rounded-pill */
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        /* Botão Primário (Azul) */
+        .btn-primary {
+            background-color: var(--cor-primaria);
+            border-color: var(--cor-primaria);
+        }
+        .btn-primary:hover {
+            background-color: #0b5ed7; /* Azul mais escuro */
+            border-color: #0b5ed7;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Botão Secundário (Borda Branca) */
+        .btn-outline-light {
+             border-width: 2px;
+        }
+        .btn-outline-light:hover {
+            background-color: white;
+            color: var(--cor-primaria); /* Muda texto para azul no hover */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* --- Seção Download App --- */
+        #download {
+            background-color: var(--cor-primaria); /* MUDANÇA: Fundo azul */
+        }
+
+        /* Botões da Store (fiel ao design) */
+        .btn-store {
+            background-color: #f7f7f7; /* MUDANÇA: Fundo claro */
+            color: var(--cor-primaria); /* MUDANÇA: Texto azul */
+            border-radius: 50rem; /* MUDANÇA: Mais arredondado */
+            padding: 1rem 4rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center; /* MUDANÇA: Centraliza o texto */
+            /* gap: 0.75rem; */ /* Removido - Ícone se foi */
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .btn-store:hover {
+            background-color: #e2e2e2; /* MUDANÇA: Hover do fundo claro */
+            color: var(--cor-primaria);
+        }
+        /* MUDANÇA: Ícones SVG removidos do CSS */
+        /* .btn-store svg {
+            width: 32px;
+            height: 32px;
+        } */
+        .btn-store-text {
+            text-align: center; /* MUDANÇA: Centralizado */
+        }
+        .btn-store-text .subtitle {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            line-height: 1;
+        }
+        .btn-store-text .title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        /* --- Footer --- */
+        .footer-logo {
+            color: var(--cor-primaria);
+            font-weight: 800;
+            font-size: 1.75rem;
+            text-decoration: none;
+        }
+        footer a {
+            color: #555;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        footer a:hover {
+            color: var(--cor-primaria);
+        }
+
+        /* Títulos de Seção Padrão */
+        h2 {
+            font-weight: 700; /* Bold */
+            color: var(--cor-escura);
+        }
+
+        /* Estilo para Acordeão FAQ */
+        .accordion-button:not(.collapsed) {
+            color: var(--cor-primaria);
+            background-color: #f0f6ff; /* Fundo azul claro para item ativo */
+        }
+        .accordion-button:focus {
+            box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+        }
+
+        /* NOVO: Estilo para o botão Fórum */
+        .btn-forum {
+            font-weight: 600;
+            color: var(--cor-primaria) !important; /* Garante a cor azul */
+        }
+        .btn-forum:hover {
+            color: #0b5ed7 !important; /* Azul mais escuro */
+        }
+
+        /* NOVO: Estilo para botão outline na nav */
+        #nav-menu .btn-outline-primary {
+            color: var(--cor-primaria);
+            border-color: var(--cor-primaria);
+            font-weight: 600;
+        }
+        #nav-menu .btn-outline-primary:hover {
+            background-color: var(--cor-primaria);
+            color: white;
+        }
+
+        /* NOVO: Override da cor bg-light */
+        .bg-light {
+            background-color: #D6E4F9 !important; /* Cor cinza-azulado do corpo */
+        }
+    </style>
 
 <!--[if gte mso 9]><xml>
 <mso:CustomDocumentProperties>
@@ -21,75 +245,326 @@
 </mso:CustomDocumentProperties>
 </xml><![endif]-->
 </head>
+<body data-bs-offset="100">
 
-<body>
-    <header>
-        <nav class="navbar bg-body-tertiary">
-            <div class="container">
-            <a class="navbar-brand" href="#">
-            <img src="/assets/img/petlove_logo.png" alt="PeTinder" width="128px" height="96px">
-            </a>
-            </div>
-        </nav>
-        <nav>
-            <ul>
-                <li><a href="">Quem somos</a></li>
-                <li><a href="">Relatos</a></li>
-                <li><a href="">FAQ</a></li>
-                <li><a href="">Baixe o App</a></li>
-            </ul>
-            </nav>
-            <button class = button-blue href="www.google.com">
-                Localizar Pet
+    <!-- 1. SEÇÃO MENU LINKS (Barra de Navegação Fixa no Topo) -->
+    <nav id="nav-menu" class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand navbar-brand-logo" href="#hero">PeTinder</a>
+
+            <!-- Botão Toggler (Mobile) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavMenu" aria-controls="navbarNavMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-           <button class = button-white>Entrar</button>
-           <button class = button-white2>Fórum</button>
-        <hr/>
-        </nav>
-    </header>    
 
-    <section>
-        <h2>Onde reencontros acontecem com 1 clique!</h2>
-        <button>Anunciar Pet</button>
-        <li><a href="">Dúvidas?</a></li>
+            <!-- Links do Menu (Centralizados) -->
+            <div class="collapse navbar-collapse" id="navbarNavMenu">
+                <ul class="navbar-nav mx-auto nav"> <!-- mx-auto para centralizar os links -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#quem-somos">Quem somos?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#relatos">Relatos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#download">Baixe o app</a> <!-- NOVO LOCAL -->
+                    </li>
+                </ul>
+            
+                <!-- Botões à Direita -->
+                <div class="d-flex flex-column flex-lg-row gap-2 align-items-center">
+                    <!-- MUDANÇA: Botão Localizar Pet voltou a ser primário -->
+                    <a href="localizar.html" class="btn btn-primary btn-sm">Localizar Pet</a>
+                    <!-- MUDANÇA: Botão Entrar voltou a ser outline -->
+                    <a href="login.html" class="btn btn-outline-primary btn-sm">Entrar</a>
+                    <!-- MUDANÇA: Botão Fórum com ícone e sem borda/fundo -->
+                    <a href="/forum/forum.html" class="btn btn-link btn-sm text-decoration-none d-flex align-items-center gap-1 btn-forum">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16" style="margin-top: -2px;">
+                            <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                            <path d="M2.165 15.803l.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.77 2.7l-.05.044a.5.5 0 0 0 .577.636l.002-.001m.16-.283c.09-.08.18-.16.25-.23.1.1.2.2.3.28l.002.002c.1.07.2.14.28.2.35.26.8.5 1.2.68.4.19.8.34 1.1.43.08.02.16.04.23.05.18.03.35.05.5.06l.002.001c.14.01.28.02.4.02.12.01.23.01.3.01.08 0 .16-.01.23-.01.12-.01.23-.01.35-.02.12-.01.23-.02.35-.03.18-.02.35-.04.5-.06.08-.02.16-.03.23-.05.3-.09.7-.24 1.1-.43.4-.18.85-.42 1.2-.68.08-.06.15-.12.23-.2.08-.06.15-.12.23-.2l.002-.002c.1-.08.2-.18.3-.28.07.07.15.15.25.23.08.08.17.16.25.23l.001.001c.1.07.2.14.28.2.35.26.8.5 1.2.68.4.19.8.34 1.1.43.08.02.16.04.23.05.18.03.35.05.5.06l.002.001c.14.01.28.02.4.02.12.01.23.01.3.01.08 0 .16-.01.23-.01.12-.01.23-.01.35-.02.12-.01.23-.02.35-.03.18-.02.35-.04.5-.06.08-.02.16-.03.23-.05.3-.09.7-.24 1.1-.43.4-.18.85-.42 1.2-.68.08-.06.15-.12.23-.2.08-.06.15-.12.23-.2l.002-.002c.1-.08.2-.18.3-.28.07.07.15.15.25.23l.001.001c.1.07.2.14.28.2.35.26.8.5 1.2.68.4.19.8.34 1.1.43.08.02.16.04.23.05.18.03.35.05.5.06l.002.001c.14.01.28.02.4.02.12.01.23.01.3.01.08 0 .16-.01.23-.01.12-.01.23-.01.35-.02.12-.01.23-.02.35-.03.18-.02.35-.04.5-.06.08-.02.16-.03.23-.05.3-.09.7-.24 1.1-.43.4-.18.85-.42 1.2-.68l-.001-.001c-.08-.06-.15-.12-.23-.2-.08-.06-.15-.12-.23-.2l-.002-.002c-.1-.08-.2-.18-.3-.28-.07.07-.15.15-.25.23-.08.08-.17.16-.25.23l-.001.001c-.1.07-.2.14-.28.2-.35.26-.8.5-1.2.68-.4.19-.8.34-1.1.43-.08.02-.16.04-.23.05-.18.03-.35.05-.5.06l-.002.001c-.14.01-.28.02-.4.02-.12.01-.23.01-.3.01-.08 0-.16-.01-.23-.01-.12-.01-.23-.01-.35-.02-.12-.01-.23-.02-.35-.03-.18-.02-.35-.04-.5-.06-.08-.02-.16-.03-.23-.05-.3-.09-.7-.24-1.1-.43-.4-.18-.85-.42-1.2-.68-.08-.06-.15-.12-.23-.2-.08-.06-.15-.12-.23-.2l-.002-.002c-.1-.08-.2-.18-.3-.28z"/>
+                        </svg>
+                        Fórum
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- 2. SEÇÃO HERO (TOPO DA PÁGINA) -->
+    <section id="hero">
+        <!-- Conteúdo de texto e botões do Hero -->
+        <div class="container hero-content text-start d-flex flex-column justify-content-center"> <!-- MUDOU: text-center para text-start -->
+            <h1 class="display-2 mb-4 slogan">
+                Onde<br>
+                reencontros<br>
+                acontecem<br>
+                com 1 clique
+            </h1>
+            <div class="d-grid gap-3 d-sm-flex justify-content-sm-start"> <!-- MUDOU: justify-content-sm-center para justify-content-sm-start -->
+                <a href="#" class="btn btn-primary btn-buscar">Anunciar pet</a> <!-- MUDADO: href="#anunciar" para href="#" pois a seção foi removida -->
+                <!-- MUDANÇA: Botão 'Encontre seu pet' trocado por 'Dúvidas?' -->
+                <a href="#faq" class="btn btn-link btn-sm text-decoration-none fw-bold">Dúvidas?</a>
+            </div>
+        </div>
     </section>
 
-    <hr/>
-
-    <section>
-        <h2>Quem somos?</h2>
-        <p>Lorem ipsum e tal</p>
+    <!-- 3. SEÇÃO ENCONTRE SEU PET (FORMULÁRIO DE BUSCA) -->
+    <section id="buscar-pet" class="py-5" style="background-color: #F7F7F7;"> <!-- Cor de fundo padrão do body -->
+        <div class="container">
+            <h2 class="mb-4 text-center h_sections">Encontre seu pet</h2>
+            <!-- Formulário de busca -->
+            <form class="row g-3 col-lg-10 mx-auto align-items-end">
+                <!-- MUDANÇA: Layout ajustado (col-md-4) para 3 colunas + botão -->
+                <div class="col-md-4">
+                    <label for="inputEspecie" class="form-label fw-bold">Espécie</label>
+                    <select id="inputEspecie" class="form-select">
+                        <option selected>Todas</option>
+                        <option>Cachorro</option>
+                        <option>Gato</option>
+                        <option>Pássaro</option>
+                        <option>Outro</option>
+                    </select>
+                </div>
+                <div class="col-md-5">
+                    <label for="inputLocalizacao" class="form-label fw-bold">Localização</label>
+                    <input type="text" class="form-control" id="inputLocalizacao" placeholder="Nome da rua ou bairro">
+                </div>
+                <!-- MUDANÇA: Botão ocupa col-md-3 -->
+                <div class="col-md-3 d-grid">
+                    <button type="submit" class="btn btn-primary btn-buscar" href="localizar.html">Buscar</button>
+                </div>
+            </form>
+        </div>
     </section>
 
-    <hr/>
-
-    <section>
-        <h2>Relatos</h2>
-        <p>Lorem ipsum e tal</p>
-        <button>Anunciar Pet</button>
+    <!-- 4. SEÇÃO QUEM SOMOS -->
+    <section id="quem-somos" class="py-5 bg-light"> <!-- bg-light -> #D6E4F9 -->
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="mb-4 text-center h_sections">Quem somos?</h2>
+                    <p class="lead mt-3">
+                        Somos amantes de animais que acreditam no poder da tecnologia para unir pets e suas famílias. O PeTinder nasceu de uma necessidade real: criar uma plataforma centralizada, rápida e fácil de usar para ajudar a encontrar animais perdidos e dar um lar temporário ou definitivo para os que foram encontrados.
+                    </p>
+                    <p>Nossa missão é diminuir a dor da separação e aumentar o número de reencontros felizes. Cada anúncio é um passo mais perto de trazer um amigo de volta para casa.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <hr/>
-
-    <section>
-        <h2>Perguntas Frequentes</h2>
-        <p>[accordion-item]</p>
-        <p>[accordion-item]</p>
-        <p>[accordion-item]</p>
-        <p>[accordion-item]</p>
+    <!-- 5. SEÇÃO RELATOS -->
+    <section id="relatos" class="py-5" style="background-color: #F7F7F7;"> <!-- Cor de fundo padrão do body -->
+        <div class="container text-center">
+            <h2 class="mb-4 text-center h_sections">Relatos de Reencontros</h2>
+            <div class="row">
+                <!-- Relato 1 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <img src="https://placehold.co/80x80/0d6efd/FFFFFF?text=PET" class="rounded-circle mb-3" alt="Foto Pet">
+                            <h5 class="card-title">Max & Família</h5>
+                            <p class="card-text">"O Max fugiu durante uma tempestade. Estávamos desesperados. Em dois dias, um vizinho que o encontrou viu nosso anúncio no PeTinder. Não temos palavras para agradecer!"</p>
+                        </div>
+                        <div class="card-footer text-muted">
+                            Reencontrado em 48h
+                        </div>
+                    </div>
+                </div>
+                <!-- Relato 2 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <img src="https://placehold.co/80x80/0d6efd/FFFFFF?text=PET" class="rounded-circle mb-3" alt="Foto Pet">
+                            <h5 class="card-title">Luna</h5>
+                            <p class="card-text">"Encontrei uma gatinha assustada na minha garagem. Anunciei no app e em poucas horas a dona dela, que mora a 3 ruas de distância, me ligou. Foi um alívio!"</p>
+                        </div>
+                        <div class="card-footer text-muted">
+                            Reencontrada em 3h
+                        </div>
+                    </div>
+                </div>
+                <!-- Relato 3 -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <img src="https://placehold.co/80x80/0d6efd/FFFFFF?text=PET" class="rounded-circle mb-3" alt="Foto Pet">
+                            <h5 class="card-title">Bolinha</h5>
+                            <p class="card-text">"Meu cachorro é idoso e se perdeu. Achei que nunca mais o veria. Uma pessoa o encontrou, cuidou dele e anunciou aqui. Uma semana depois, ele estava em casa."</p>
+                        </div>
+                        <div class="card-footer text-muted">
+                            Reencontrado em 1 semana
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <hr/>
+    <!-- MUDANÇA: Removida a classe 'my-5' e adicionada 'mt-5' para tirar a margem inferior -->
+    <section id="faq" class="py-5 mt-5 bg-light">
+        <div class="container"> <!-- Container normal para o acordeão não ficar tão largo -->
+            <h2 class="mb-4 text-center h_sections">FAQ</h2>
+            
+            <!-- ACORDEÃO ADICIONADO -->
+            <div class="accordion col-lg-8 mx-auto" id="accordionFAQ">
+                <!-- Item 1 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Como funciona o PeTinder?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionFAQ">
+                        <div class="accordion-body">
+                            O PeTinder é uma plataforma que conecta pessoas que perderam seus animais de estimação com pessoas que encontraram animais perdidos. Você pode "Anunciar um pet" (perdido ou encontrado) ou "Localizar um pet" usando nossos filtros de busca.
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            O serviço é pago?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionFAQ">
+                        <div class="accordion-body">
+                            Não. O uso do PeTinder é totalmente gratuito, tanto para anunciar quanto para procurar. Nosso objetivo é facilitar reencontros.
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Encontrei um pet. O que devo fazer?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionFAQ">
+                        <div class="accordion-body">
+                            Se possível, resgate o animal para um local seguro, ofereça água e comida. Tire boas fotos e clique em "Anunciar pet" na nossa plataforma, fornecendo o máximo de detalhes sobre onde e quando o encontrou.
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Perdi meu pet. Como o PeTinder pode ajudar?
+                        </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionFAQ">
+                        <div class="accordion-body">
+                            Clique em "Anunciar pet" e preencha o formulário de "Pet Perdido". Além disso, use a seção "Encontre seu pet" diariamente para verificar se alguém o encontrou e anunciou na plataforma.
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 5 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            O que é o Fórum?
+                        </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionFAQ">
+                        <div class="accordion-body">
+                            O Fórum é um espaço para a comunidade trocar dicas sobre cuidados com animais, compartilhar histórias de reencontros e pedir conselhos sobre situações de resgate ou perda.
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <section>
-        <h2>Baixe o App</h2>
-        <button>🍎 App Store</button> <button>▶️ Play Store</button>
+        </div>
     </section>
-    
-    <hr/>
 
-    <footer>
-        <p>&copy; 2025 PeTinder. Todos os direitos reservados.</p>
+
+    <!-- 5. SEÇÃO DOWNLOAD APP -->
+    <section id="download" class="py-5 text-white">
+        <div class="container text-center">
+            <h2 class="text-white mb-4">Baixe nosso app</h2>
+            <p class="lead col-lg-8 mx-auto text-light opacity-75 mb-5">
+                Leve o PeTinder com você e seja notificado sobre novos pets encontrados na sua região.
+            </p>
+            <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                <!-- Botão App Store (Fiel ao design) -->
+                <a href="#" class="btn-store">
+                    <!-- MUDANÇA: Ícone SVG removido -->
+                    <div class="btn-store-text">
+                        <!-- MUDANÇA: Texto e <br> -->
+                        <span class="subtitle">Disponível na<br></span>
+                        <span class="title">App Store</span>
+                    </div>
+                </a>
+                <!-- Botão Google Play (Fiel ao design) -->
+                <a href="#" class="btn-store">
+                    <!-- MUDANÇA: Ícone SVG removido -->
+                    <div class="btn-store-text">
+                        <!-- MUDANÇA: Texto e <br> -->
+                        <span class="subtitle">Disponível na<br></span>
+                        <span class="title">Play Store</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FOOTER -->
+    <footer class="py-5">
+        <div class="container text-center">
+            <a href="#hero" class="footer-logo">PeTinder</a>
+            <nav class="nav justify-content-center gap-3 mt-3 mb-3">
+                <a href="#">Localizar pet</a>
+                <a href="#">Termos de Uso</a>
+                <a href="#">Privacidade</a>
+            </nav>
+            <p class="text-muted">&copy; 2025 PeTinder. Todos os direitos reservados.</p>
+        </div>
     </footer>
- </body>
+
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- Script para rolagem suave (opcional, Bootstrap cuida disso com data-bs-spy) -->
+    <script>
+        // Ativa o smooth scroll para todos os links <a> com href começando em #
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                // Previne o comportamento padrão
+                e.preventDefault();
+                let targetId = this.getAttribute('href');
+                let targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    // Calcula a posição do elemento
+                    let offsetTop = targetElement.offsetTop;
+
+                    // Ajusta pela altura da barra de navegação fixa
+                    let navMenu = document.getElementById('nav-menu');
+                    if (navMenu) {
+                        // Subtrai a altura da navbar E o padding-top do body
+                        // Mas como a hero tem margin-top negativo, só a altura da nav basta
+                        offsetTop -= navMenu.offsetHeight;
+                    }
+                    
+                    // Tratamento especial para o link #hero
+                    if (targetId === '#hero') {
+                        offsetTop = 0;
+                    }
+                    
+                    // Rola suavemente para a posição
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
 </html>
