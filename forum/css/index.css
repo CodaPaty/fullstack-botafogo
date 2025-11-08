@@ -156,6 +156,7 @@ button:hover {
 }
 
 .sidebar-left ul {
+  gap: 10px;
   list-style: none;
 }
 
@@ -169,6 +170,34 @@ button:hover {
 
 .sidebar-left li a:hover,
 .sidebar-left li a.active {
+  background-color: #e8f0fe;
+  color: #6855e0;
+}
+/* SIDEBAR LOG-IN */
+
+.sidebar-left-log {
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px 0;
+  height: fit-content;
+  position: sticky;
+  top: 80px;
+}
+
+.sidebar-left-log ul {
+  list-style: none;
+}
+
+.sidebar-left-log li a {
+  display: block;
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.sidebar-left-log li a:hover,
+.sidebar-left-log li a.active {
   background-color: #e8f0fe;
   color: #6855e0;
 }
@@ -962,6 +991,7 @@ li {
   /* Variável para a altura mínima da sidebar-left */
   :root {
     --sidebar-left-min-height: 45px;
+    --sidebar-left-min-height-login: 90px;
   }
 
   /* 1. Navbar Principal (.superior) - Fixa */
@@ -1045,6 +1075,47 @@ li {
   }
 
   .sidebar-left li a {
+    width: 100%;
+  }
+
+  .sidebar-left-log {
+    order: 1;
+
+    position: fixed;
+    top: 0; 
+    z-index: 101;
+    width: 250px;
+    height: 100vh;
+    left: -250px;
+    transition: left 0.3s ease-in-out;
+
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #eee;
+    white-space: nowrap;
+    height: var(--sidebar-left-min-height-login); /* Altura fixa */
+  }
+
+  .sidebar-left-log ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 60px;
+    list-style: none;
+    padding: 0 0;
+    margin: 0;
+    justify-content: flex-start;
+    height: auto;
+    align-items: center;
+  }
+
+  .sidebar-left-log ul {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 0;
+    height: auto;
+  }
+
+  .sidebar-left-log li a {
     width: 100%;
   }
 

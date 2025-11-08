@@ -8,25 +8,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PeTinder</title>
     <link rel="stylesheet" href="../css/index.css" />
-  </head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=settings" />
 
+  </head>
+  <style>
+    .espaco {
+        height: 3rem;
+        background-color: #f5f5f5;
+    }
+  </style>
+  <script>
+    function toggleInput(field) {
+    const inputs = document.querySelectorAll('.input-area');
+    inputs.forEach(input => {
+        if (!input.id.includes(field)) {
+            input.style.display = 'none';
+        }
+    });
+
+    const el = document.getElementById('input-' + field);
+    if (el.style.display === 'block') {
+        el.style.display = 'none';
+    } else {
+        el.style.display = 'block';
+    }
+}
+document.querySelectorAll(".comment-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const card = btn.closest(".forum-card");
+        const box = card.querySelector(".forum-comment-box");
+        box.classList.toggle("open");
+    });
+});
+  </script>
   <body>
+    <script></script>
     <nav class="superior">
       <h1 class="icone">🐾 PeTinder</h1>
       <input type="search" placeholder="Pesquisar..." />
-      <button class="btn-Cadastrar">Cadastrar</button>
-      <button class="btn-Entrar">Entrar</button>
+        <div class="avatar"><img src="" alt=""></div>
+        <button class="config"><a href="config.html"><span class="material-symbols-outlined">
+            settings
+            </span></a></button>
     </nav>
 
     <main class="container">
       <aside class="sidebar-left">
         <ul>
-          <li><a href="../forum.html" class="active">Home</a></li>
-          <li><a href="index.html">Menu</a></li>
-          <li><a href="suas_questoes.html">Suas respostas</a></li>
-          <li><a href="tags.html">Tags</a></li>
-          <li><a href="ranking.html">Ranking</a></li>
+          <li><a href="../forum_login.html" class="active">Home</a></li>
+          <li><a href="tags_log.html">Tags</a></li>
+          <li><a href="ranking_log.html">Ranking</a></li>
         </ul>
+        <div class="espaco" style="height: 3rem; background-color:#f5f5f5"></div>
+        <ul>
+            <li><a href="posting.html">Postar</a></li>
+            <li><a href="seus_posts.html">Seus posts</a></li>
+            <li><a href="suas_questoes.html">Suas respostas</a></li>
+          </ul>
       </aside>
 
       <section class="content-center">

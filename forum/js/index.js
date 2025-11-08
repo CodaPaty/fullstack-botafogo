@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const navSuperior = document.querySelector(".superior");
     const sidebarLeft = document.querySelector(".sidebar-left");
     const mainContainer = document.querySelector(".container");
+    const sidebarLeftLogin = document.querySelector(".sidebar-left-log");
 
     if (isMobile && navSuperior && sidebarLeft && mainContainer) {
       // 1. Calcula a altura REAL da navbar principal (dinâmica)
@@ -44,9 +45,12 @@ document.addEventListener("DOMContentLoaded", () => {
       // 2. A altura da sidebar-left é fixa no CSS (45px)
       const sidebarLeftHeight = sidebarLeft.offsetHeight || 45;
 
+      const sidebarLeftHeightLogin = sidebarLeftLogin.offsetHeight;
+
       // 3. POSICIONA A SIDEBAR-LEFT (a navbar secundária) EXATAMENTE
       // O topo da sidebar-left é igual à altura total da nav superior.
       sidebarLeft.style.top = `${navSuperiorHeight}px`;
+      sidebarLeftLogin.style.top = `${sidebarLeftHeightLogin}px`;
 
       // 4. Garante que o conteúdo principal comece abaixo das duas barras fixas.
       const totalFixedHeight = navSuperiorHeight + sidebarLeftHeight;
@@ -55,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Limpa os estilos quando não está em modo móvel
       mainContainer.style.paddingTop = "";
       sidebarLeft.style.top = "";
+      sidebarLeftLogin.style.top = "";
     }
   }
 
@@ -166,4 +171,29 @@ if (registerSubmitBtn) {
       alert("Por favor, preencha todos os campos.");
     }
   });
+}
+
+// Configurações
+const config = querySelector('.config')
+
+function openHTML(modalElement) {
+  if (modalElement) modalElement.classList.add("open");
+}
+
+function closeHTML(modalElement) {
+  if (modalElement) modalElement.classList.remove("open");
+}
+if (btnEntrar && loginModal) {
+  btnEntrar.addEventListener("click", (e) => {
+    e.preventDefault();
+    openModal(loginModal);
+  });
+}
+
+if (config) {
+  config.addEventListener("click", (e) => {
+    e.preventDefault;
+    openHTML()    
+  }
+  )
 }
