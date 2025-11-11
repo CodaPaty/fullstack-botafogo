@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tela - Situação</title>
+  <link rel="stylesheet" href="../Css/situacao.css">
+
+  <!-- Fonte e ícones -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- Lado esquerdo -->
+    <div class="left">
+      <h2>
+        Localizar seu pet nunca foi tão fácil!<br>
+        Veja quantos usuários conseguiram<br>
+        reencontrar seu pet perdido.<br>
+        Torcemos que você também obtenha sucesso.
+      </h2>
+
+      <div class="depoimento">
+        <img src="./fotojuliana.jpg" alt="Usuário">
+        <div>
+          <strong>Juliana ⭐⭐⭐⭐⭐</strong>
+          <span class="local">Cotia - SP</span>
+          <p><em>"Uma moça estava cuidando dela e o filho viu o anúncio e nos contatou. 
+          Façam campanhas e não desistam de encontrar o pet de vocês 💜🙏"</em></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lado direito -->
+    <div class="right">
+      <img src="./logo_contrastante_petinder.png" alt="Logo coração" class="logo">
+
+      <form>
+        <label for="situacao">Situação</label>
+        <input type="text" id="situacao" name="situacao" placeholder="Perdido ou Achado">
+
+        <label for="especie">Espécie</label>
+        <input type="text" id="especie" name="especie" placeholder="Cão, Gato, etc.">
+
+        <label for="genero">Gênero</label>
+        <input type="text" id="genero" name="genero" placeholder="Macho ou Fêmea">
+
+        <div class="botoes">
+          <button type="button" class="voltar" onclick="window.history.back()">Voltar</button>
+          <button type="submit" class="prosseguir">Prosseguir</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,165 +1,132 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    font-family: "Poppins", sans-serif;
-    background-color: #f7f7f7;
-    margin: 0;
-    background-color: #D6E4F9;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-
-background-image: url("../img/fundo_login.png");
-background-repeat: repeat; /* repete o padrão */
-background-size: auto; /* mantém o tamanho original do padrão */
-background-position: center;
-
+  font-family: 'Poppins', sans-serif;
+  background-image: url("./fundo_login.png");
+  background-repeat: repeat;
+  background-size: cover; /* cobre toda a tela */
+  background-attachment: fixed; /* fixa o fundo */
+  background-position: center;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding-top: 80px; /* espaço pro topo fixo */
 }
+
+
 /* Container principal */
-.container {
-    border-radius: 12px;
-    box-shadow: none;
-    width: 90%;
-    display: flex;
-    gap: 32px;
-    align-items: stretch;
-    justify-content: center;
-    padding: 24px;
-    max-width: 1200px;
-    margin: 0 auto;
-    min-height: 90vh;
+.container-duas-colunas {
+  display: flex;
+  flex-wrap: wrap; /* Evita sobreposição em telas pequenas */
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 80%;
+  max-width: 1000px;
+  margin: 40px auto;
+  gap: 40px; /* espaço entre colunas */
 }
 
-/* Lado esquerdo */
-.left {
-    flex: 1 1 50%;
-    background-color: #89c6ec;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+/* Colunas */
+.coluna-esquerda,
+.coluna-direita {
+  flex: 1 1 400px; /* Cresce e encolhe conforme o espaço */
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.left h2 {
-    font-size: clamp(18px, 2.2vw, 24px);
-    color: #003366;
-    margin-bottom: 16px;
+/* Texto da esquerda */
+.coluna-esquerda h2 {
+  font-weight: 600;
+  line-height: 1.6;
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 40px;
 }
 
-.depoimento {
-    margin-top: 100px;
-    background: #f8f9fa;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    padding: 20px;
-    max-width: 360px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+/* Formulário */
+.form-recompensa {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.depoimento img {
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    float: left;
-    margin-right: 16px;
-}
-
-.depoimento strong {
-    display: block;
-}
-
-/* Lado direito */
-.right {
-    flex: 1 1 50%;
-    padding: 40px;
-    background: #F7F7F7;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-form {
-    margin-top: 24px;
-    max-width: 420px;
+/* Grupos de input */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
-input {
-    width: 100%;
-    padding: 13px 15px;
-    margin-bottom: 16px;
-    border: 2px solid #2aa4e1;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+/* Campos */
+input[type="text"],
+input[type="number"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
 }
 
+/* Botões */
 button {
-    padding: 12px 20px;
-    background: #74ACFF;
-    color: #ffffff;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    position: fixed;
-    bottom: 100px;
-    right: 390px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  transition: 0.3s;
 }
 
-button:hover {
-    background: #0056b3;
+/* Botão de toggle */
+.btn-toggle {
+  background-color: #ccc;
+  color: #000;
+}
+
+.btn-toggle.ligado {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-toggle.desligado {
+  background-color: #bbb;
+  color: #333;
+}
+
+/* Botão enviar */
+.btn-enviar {
+  background-color: #28a745;
+  color: white;
+  font-weight: 600;
+}
+
+.btn-enviar:hover {
+  background-color: #218838;
 }
 
 /* Responsividade */
-@media (max-width: 960px) {
-    .container {
-        flex-direction: column;
-        gap: 20px;
-        padding: 16px;
-        min-height: unset;
-    }
-    .left, .right {
-        flex: 1 1 auto;
-        padding: 24px;
-    }
-    .depoimento {
-        max-width: 100%;
-        overflow: hidden;
-    }
+@media (max-width: 768px) {
+  .container-duas-colunas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .coluna-esquerda, .coluna-direita {
+    width: 100%;
+  }
 }
-
-/* Nome PeTinder no canto superior esquerdo */
-.topo {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  z-index: 1000;
-}
-
-.logo-nome {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 800;
-  font-size: 2rem;
-  color: #007bff;
-  margin: 0;
-    position: absolute;
-  top: 25px;
-  right: 25px;
-  width: 90px;
-}
-
- /* Logo na Navbar */
-        .navbar-brand-logo {
-            color: var(--cor-primaria) !important;
-            font-weight: 800; /* Extra-bold */
-            font-size: 2.25rem; /* Tamanho do logo */
-        }
-
-        

@@ -1,12 +1,17 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to right, #bcd4f0 0%, #e9f2ff 100%);
+  font-family: 'Poppins', sans-serif;
+  background-image: url("./fundo_login.png"); 
+  background-repeat: no-repeat;
+  background-size: cover;      
+  background-position: center; 
+  background-attachment: fixed; 
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
+
 
 /* Container geral */
 .container {
@@ -23,7 +28,7 @@ body {
 /* Lado esquerdo */
 .left {
   flex: 1;
-  background: rgba(137, 198, 236, 0.3);
+  background: rgba(40, 115, 162, 0.3);
   padding: 60px 40px;
   color: #003366;
   border-right: 1px solid rgba(0,0,0,0.1);
@@ -35,7 +40,7 @@ body {
   margin-bottom: 60px;
 }
 
-/* Caixa de depoimento */
+
 .depoimento {
   background: #f8f9fa;
   border-radius: 12px;
@@ -48,14 +53,15 @@ body {
 }
 
 .depoimento img {
-  width: 70px;
-  height: 70px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .depoimento strong {
-  color: #222;
+  color: #070707;
   font-size: 1rem;
   display: block;
 }
@@ -63,12 +69,12 @@ body {
 .depoimento p {
   margin-top: 8px;
   font-size: 0.85rem;
-  color: #555;
+  color: #090909;
 }
 
 .local {
-  font-size: 0.8rem;
-  color: #888;
+  font-size: 0.9rem;
+  color: #0a0a0a;
 }
 
 /* Lado direito */
