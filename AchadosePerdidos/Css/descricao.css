@@ -1,5 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
+    background-color: #f7f7f7;
     margin: 0;
     background-color: #D6E4F9;
     line-height: 1.5;
@@ -12,17 +13,10 @@ body {
     height: 100vh;
 }
 
-header img {
-    height: 60px;
-    margin-right: 20px;
-}
-
 /* Container principal */
 .container {
-    /* background-color: #ccddee; */ /* <- removido */
-    /* border: 4px solid #92bded; */ /* <- removido */
     border-radius: 12px;
-    box-shadow: none; /* sombra opcional */
+    box-shadow: none;
     width: 90%;
     display: flex;
     gap: 32px;
@@ -57,7 +51,6 @@ header img {
     padding: 20px;
     max-width: 360px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-
 }
 
 .depoimento img {
@@ -79,14 +72,6 @@ header img {
     background: #F7F7F7;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-   
-}
-
-.logo {
-    width: clamp(50px, 100vw, 100px);
-    height: auto;
-    display: block;
-    margin-left: auto;
 }
 
 form {
@@ -144,3 +129,30 @@ button:hover {
         overflow: hidden;
     }
 }
+
+/* Nome PeTinder no canto superior esquerdo */
+.topo {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.logo-nome {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  color: #007bff;
+  margin: 0;
+    position: absolute;
+  top: 25px;
+  right: 25px;
+  width: 90px;
+}
+
+ /* Logo na Navbar */
+        .navbar-brand-logo {
+            color: var(--cor-primaria) !important;
+            font-weight: 800; /* Extra-bold */
+            font-size: 2.25rem; /* Tamanho do logo */
+        }

@@ -5,8 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recompensa</title>
   <link rel="stylesheet" href="../Css/situacao.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Nome PeTinder no canto superior direito */
+    .topo {
+      position: fixed;
+      top: 20px;
+      right: 20px;           /* lado direito */
+      z-index: 1000;
+    }
+
+    .logo-nome {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      font-size: 2rem;
+      color: #007bff;        /* azul */
+      margin: 0;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Nome do site no canto superior direito -->
+  <header class="topo">
+    <h1 class="logo-nome">PeTinder</h1>
+  </header>
 
   <!-- CONTAINER PRINCIPAL -->
   <div class="container-duas-colunas">
@@ -23,7 +48,6 @@
 
     <!-- COLUNA DIREITA -->
     <div class="coluna-direita">
-      <img class="logo" src="../img/logo_pag2.png" alt="Logo do site: um cão e um gato dentro de um coração">
 
       <form class="form-recompensa">
         <div class="form-group">
@@ -40,4 +64,37 @@
           <button type="button" id="botao" class="btn-toggle desligado">Desligado</button>
         </div>
 
-        <div class="form-group" id="ca
+        <div class="form-group" id="campo-recompensa" style="display: none;">
+          <label for="valor-recompensa">Valor da Recompensa (R$)</label>
+          <input type="number" id="valor-recompensa" name="valor-recompensa" placeholder="Digite o valor">
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn-enviar">Enviar</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <script>
+    // Alterna botão "Ligado/Desligado"
+    const botao = document.getElementById('botao');
+    const campoRecompensa = document.getElementById('campo-recompensa');
+
+    botao.addEventListener('click', () => {
+      botao.classList.toggle('desligado');
+      botao.classList.toggle('ligado');
+
+      if (botao.classList.contains('ligado')) {
+        botao.textContent = 'Ligado';
+        campoRecompensa.style.display = 'block';
+      } else {
+        botao.textContent = 'Desligado';
+        campoRecompensa.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
