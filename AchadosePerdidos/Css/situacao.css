@@ -1,4 +1,3 @@
-/* RESET GERAL */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +5,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* CORPO */
 body {
   background-image: url("./fundo_login.png");
   background-repeat: no-repeat;
@@ -18,8 +16,6 @@ body {
   align-items: center;
   min-height: 100vh;
 }
-
-/* CONTAINER PRINCIPAL */
 .container {
   display: flex;
   justify-content: center;
@@ -33,7 +29,6 @@ body {
   backdrop-filter: blur(6px);
 }
 
-/* LADO ESQUERDO */
 .left {
   flex: 1;
   background: rgba(200, 224, 255, 0.35);
@@ -48,7 +43,6 @@ body {
   margin-bottom: 50px;
 }
 
-/* DEPOIMENTO */
 .depoimento {
   background: #f9fafc;
   border-radius: 12px;
@@ -65,7 +59,7 @@ body {
   height: 90px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #a7c6eb;
+  border: 3px solid #0b6be1;
 }
 
 .depoimento strong {
@@ -76,17 +70,16 @@ body {
 
 .depoimento .local {
   font-size: 0.85rem;
-  color: #555;
+  color: #0c0c0c;
 }
 
 .depoimento p {
   font-size: 0.85rem;
-  color: #444;
+  color: #020202;
   margin-top: 5px;
   font-style: italic;
 }
 
-/* LADO DIREITO */
 .right {
   flex: 1;
   background: #ffffffd9;
@@ -129,7 +122,6 @@ input:focus {
   outline: none;
 }
 
-/* BOTÕES */
 .botoes {
   display: flex;
   justify-content: space-between;
