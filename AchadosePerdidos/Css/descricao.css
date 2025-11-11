@@ -11,8 +11,13 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
 
+background-image: url("../img/fundo_login.png");
+background-repeat: repeat; /* repete o padrão */
+background-size: auto; /* mantém o tamanho original do padrão */
+background-position: center;
+
+}
 /* Container principal */
 .container {
     border-radius: 12px;
@@ -156,3 +161,5 @@ button:hover {
             font-weight: 800; /* Extra-bold */
             font-size: 2.25rem; /* Tamanho do logo */
         }
+
+        
