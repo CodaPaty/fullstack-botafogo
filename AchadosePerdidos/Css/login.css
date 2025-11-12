@@ -1,22 +1,17 @@
-/*body {
+
+
+body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to right, #c7dbf4, #f1f6ff);
+  font-family: 'Poppins', sans-serif;
+  background-image: url("./fundo_login.png"); 
+  background-repeat: no-repeat;
+  background-size: cover;      
+  background-position: center; 
+  background-attachment: fixed; 
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-}
-*/
-
-body {
-  margin: 0;
-  height: 100vh; /* garante que o body ocupe toda a altura da tela */
-  display: flex;
-  justify-content: center; /* centraliza horizontalmente */
-  align-items: center;     /* centraliza verticalmente */
-  font-family: Arial, sans-serif;
-  background-color: #f8f8f8; /* pode trocar pelo fundo que quiser */
 }
 
 .login-container {
