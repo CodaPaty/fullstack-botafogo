@@ -3,9 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-
   /* Fundo com imagem */
-  background-image: url("AchadosePerdidos\img\fundo login.png" );
   background: linear-gradient(white,white,whitesmoke,#d9efff,#bdd6fb,#79b1ff);
   background-repeat: no-repeat;
   background-attachment: fixed;
