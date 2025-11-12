@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recompensa</title>
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="descricao.css">
+
+  <!-- Fonte Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    .topo {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    .logo-nome {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      font-size: 2rem;
+      color: #007bff;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nome do site -->
+  <header class="topo">
+    <h1 class="logo-nome">PeTinder</h1>
+  </header>
+
+  <!-- CONTAINER PRINCIPAL -->
+  <div class="container-duas-colunas">
+
+    <!-- COLUNA ESQUERDA -->
+    <div class="coluna-esquerda">
+      <h2>
+        Localizar seu pet nunca foi tão fácil!<br>
+        Veja quantos usuários conseguiram<br>
+        reencontrar seu pet perdido.<br>
+        Torcemos que você também obtenha sucesso!
+      </h2>
+    </div>
+
+    <!-- COLUNA DIREITA -->
+    <div class="coluna-direita">
+      <form class="form-recompensa" action="#" method="post">
+        <div class="form-group">
+          <label for="nome-pet">Nome do Pet <i>(Opcional)</i></label>
+          <input type="text" id="nome-pet" name="nome-pet" placeholder="Digite o nome do pet">
+        </div>
+
+        <div class="form-group">
+          <label for="descricao">Descrição <i>(Opcional)</i></label>
+          <input type="text" id="descricao" name="descricao" placeholder="Digite uma descrição">
+        </div>
+
+        <!-- Campo da recompensa agora sempre visível -->
+        <div class="form-group" id="campo-recompensa">
+          <label for="valor-recompensa">Valor da Recompensa (R$)</label>
+          <input type="number" id="valor-recompensa" name="valor-recompensa" placeholder="Digite o valor" min="0" step="0.01">
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn-enviar">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,14 +1,19 @@
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to right, #bcd4f0 0%, #e9f2ff 100%);
+  font-family: 'Poppins', sans-serif;
+  background-image: url("./fundo_login.png");
+  background-repeat: repeat;
+  background-size: cover; /* cobre toda a tela */
+  background-attachment: fixed; /* fixa o fundo */
+  background-position: center;
+  color: #333;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   min-height: 100vh;
+  padding-top: 80px; /* espaço pro topo fixo */
 }
 
-/* Container geral */
 .container {
   display: flex;
   justify-content: center;
@@ -20,12 +25,11 @@ body {
   overflow: hidden;
 }
 
-/* Lado esquerdo */
 .left {
   flex: 1;
-  background: rgba(137, 198, 236, 0.3);
+  background: rgba(66, 160, 218, 0.3);
   padding: 60px 40px;
-  color: #003366;
+  color: #002d6b;
   border-right: 1px solid rgba(0,0,0,0.1);
 }
 
@@ -35,7 +39,6 @@ body {
   margin-bottom: 60px;
 }
 
-/* Caixa de depoimento */
 .depoimento {
   background: #f8f9fa;
   border-radius: 12px;
@@ -48,10 +51,11 @@ body {
 }
 
 .depoimento img {
-  width: 70px;
-  height: 70px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .depoimento strong {
@@ -61,17 +65,16 @@ body {
 }
 
 .depoimento p {
-  margin-top: 8px;
+  margin-top: 9px;
   font-size: 0.85rem;
-  color: #555;
+  color: #131313;
 }
 
 .local {
   font-size: 0.8rem;
-  color: #888;
+  color: #101010;
 }
 
-/* Lado direito */
 .right {
   flex: 1;
   background: #ffffff;
@@ -107,7 +110,6 @@ input {
   font-size: 1rem;
 }
 
-/* Botões */
 .botoes {
   display: flex;
   justify-content: space-between;
@@ -124,7 +126,6 @@ button {
   transition: 0.2s ease;
 }
 
-/* Botão voltar */
 .voltar {
   background: linear-gradient(to bottom, #b8d5f3, #90bce7);
   color: #003366;
@@ -135,7 +136,6 @@ button {
   transform: translateY(-1px);
 }
 
-/* Botão prosseguir */
 .prosseguir {
   background: #007bff;
   color: white;

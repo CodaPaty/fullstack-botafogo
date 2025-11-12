@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - Endereço</title>
+  <link rel="stylesheet" href="endereco.css">
+
+  
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Lado Esquerdo -->
+<div class="left">
+    <h2>
+        Localizar seu pet nunca foi tão fácil!<br>
+        Veja quantos usuários conseguiram<br>
+        reencontrar seu pet perdido.<br>
+        Torcemos que você também obtenha sucesso.
+    </h2>
+
+<div class="depoimento">
+        <img src="./fotojuliana.jpg" alt="Usuário">
+        <strong>Juliana</strong>
+        <span class="local">Cotia-SP</span>
+        <p>"Uma moça estava cuidando dela e o filho viu o anúncio e nos contatou, foram campanhas e não desistiram de encontrar a pet de vcs 💕🙏"</p>
+      </div>
+    </div>
+
+    <!-- Lado Direito -->
+    <div class="right">
+      <img src="logo_contrastante_petinder.png" class="logo">
+
+      <form>
+        <label for="endereco">Endereço</label>
+        <a href="#" class="usar-localizacao">Usar localização atual</a>
+        <input type="text" id="endereco" placeholder="Digite o endereço">
+        <a href="https://www.google.com/maps/search/?api=1&query=Minha+localização" 
+   class="usar-localizacao" target="_blank">
+   Usar localização atual
+</a>
+
+
+        <label for="referencia">Ponto de Referência (opcional)</label>
+        <input type="text" id="referencia" placeholder="Digite um ponto de referência">
+      
+        <label for="data">Data que o Pet foi Perdido</label>
+        <input type="date" id="data">
+
+        <div class="botoes">
+          <button class="voltar">Voltar</button>
+          <button class="prosseguir">Prosseguir</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</body>
+</html>
