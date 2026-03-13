@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>PeTinder - Perguntas Frequentes</title>
+   <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .faq-container { margin-top: 20px; }
+        .faq-item {
+            background: white;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .faq-question {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--text-main);
+            transition: 0.3s;
+        }
+        .faq-question:hover { background: #f0f7ff; color: var(--primary-color); }
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease-out;
+            background: #fafafa;
+            color: #666;
+            line-height: 1.6;
+        }
+        .faq-item.active .faq-answer { padding: 20px; max-height: 200px; }
+        .faq-item.active i { transform: rotate(180deg); color: var(--primary-color); }
+    </style>
+</head>
+<body>
+
+<header class="top-nav">
+<button class="menu-mobile-btn" id="openSidebar">
+    <i class="fas fa-bars"></i>
+</button>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+   
+    <a href="home.html" class="logo">
+        <i class="fas fa-paw"></i> PeTinder
+    </a>
+
+    <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Pesquisar comunidades...">
+    </div>
+
+    <div class="user-actions">
+        <a href="home.html" class="nav-icon-btn" title="Início">
+            <i class="fas fa-home"></i>
+        </a>
+
+       
+        <a href="mensagens.html" class="nav-icon-btn" title="Mensagens">
+            <i class="fas fa-comment-dots"></i>
+            <span class="msg-badge">2</span>
+        </a>
+
+        <div style="position: relative; display: flex;">
+            <button class="nav-icon-btn" id="notifBtn">
+                <i class="fas fa-bell"></i>
+                <span class="notif-badge">3</span>
+            </button>
+            <div class="notif-dropdown" id="notifDropdown"></div>
+        </div>
+
+        <a href="configuracoes.html" class="nav-icon-btn" title="Configurações">
+            <i class="fas fa-cog"></i>
+        </a>
+    </div>
+</header>
+
+    <div class="main-container">
+        
+   <aside class="sidebar">
+    <nav class="mobile-nav">
+        <a href="home.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-home"></i> Home</div>
+        </a>
+              
+        
+        <a href="perguntas.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-question-circle"></i> Questões</div>
+        </a>
+        
+        <a href="tags.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-tag"></i> Tags</div>
+        </a>
+        
+        <a href="ranking.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-trophy"></i> Ranking</div>
+        </a>
+        <a href="contatos.html" class="nav-link">
+            <div class="nav-item">
+                <i class="fas fa-address-book"></i> Contatos
+            </div>
+        </a>
+    </nav>
+</aside>
+
+        <main class="feed">
+            <div class="post-card">
+                <h2><i class="fas fa-comments"></i> Perguntas Frequentes</h2>
+                <p>Tudo o que você precisa saber sobre a nossa comunidade.</p>
+
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Qual o objetivo da comunidade PeTinder?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            O PeTinder nasceu para facilitar o encontro entre animais que precisam de um lar e pessoas que buscam um novo melhor amigo. Nosso foco é promover a adoção responsável e combater o abandono animal através da tecnologia.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Como posso contribuir com o projeto?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Você pode contribuir de várias formas: compartilhando perfis de pets nas suas redes sociais, sendo um lar temporário, denunciando perfis falsos ou ajudando a manter a comunidade amigável seguindo nossas melhores práticas.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            O PeTinder cobra taxas de adoção?
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Não! O PeTinder é uma plataforma gratuita. Nós não intermediamos transações financeiras. Se alguém cobrar pela adoção de um pet aqui, denuncie imediatamente na nossa página de Ajuda.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Lógica para abrir/fechar as perguntas
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+    <script src="js/components.js"></script>
+                        
+            <script src="js/notificacoes.js"></script>
+            <script src="js/menu.js"></script>
+</body>
+</html>

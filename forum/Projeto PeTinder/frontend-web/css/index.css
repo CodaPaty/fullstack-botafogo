@@ -1,0 +1,82 @@
+:root {
+    --primary-color: #2980b9;    /* Azul Pet (mais sóbrio) */
+    --secondary-color: #3498db;  /* Azul claro para hover */
+    --bg-color: #f4f7f6;         /* Cinza azulado bem clarinho para o fundo */
+    --card-white: #ffffff;
+    --text-main: #2c3e50;        /* Azul escuro para textos */
+}
+
+body.login-body {
+    background-color: var(--bg-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background: white;
+    padding: 30px 40px; /* Reduzi um pouco o padding vertical */
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 380px; /* Um pouco mais larga para os campos de registro */
+    max-height: 90vh; /* Garante que não suma em telas pequenas */
+    overflow-y: auto; /* Adiciona scroll se necessário */
+}
+
+.logo-login i {
+    font-size: 50px;
+    color: var(--primary-color);
+}
+
+.input-group {
+    margin: 15px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #eee;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.input-group input {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+    width: 100%;
+}
+
+.btn-login {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.login-footer {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.signup-link {
+    color: var(--primary-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+.signup-link:hover {
+    text-decoration: underline;
+}
+
+.btn-login:active {
+    transform: scale(0.98); /* Dá a sensação de que o botão foi apertado */
+    background-color: #1c5982;
+}

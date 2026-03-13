@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeTinder - Comunidade Curitiba</title>
+ <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+ <header class="top-nav">
+<button class="menu-mobile-btn" id="openSidebar">
+    <i class="fas fa-bars"></i>
+</button>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+   
+    <a href="home.html" class="logo">
+        <i class="fas fa-paw"></i> PeTinder
+    </a>
+
+    <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Pesquisar comunidades...">
+    </div>
+
+    <div class="user-actions">
+        <a href="home.html" class="nav-icon-btn" title="Início">
+            <i class="fas fa-home"></i>
+        </a>
+
+       
+        <a href="mensagens.html" class="nav-icon-btn" title="Mensagens">
+            <i class="fas fa-comment-dots"></i>
+            <span class="msg-badge">2</span>
+        </a>
+
+        <div style="position: relative; display: flex;">
+            <button class="nav-icon-btn" id="notifBtn">
+                <i class="fas fa-bell"></i>
+                <span class="notif-badge">3</span>
+            </button>
+            <div class="notif-dropdown" id="notifDropdown"></div>
+        </div>
+
+        <a href="configuracoes.html" class="nav-icon-btn" title="Configurações">
+            <i class="fas fa-cog"></i>
+        </a>
+    </div>
+</header>
+
+    <div class="main-container">
+        
+   <aside class="sidebar">
+    <nav class="mobile-nav">
+        <a href="home.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-home"></i> Home</div>
+        </a>
+              
+        
+        <a href="perguntas.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-question-circle"></i> Questões</div>
+        </a>
+        
+        <a href="tags.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-tag"></i> Tags</div>
+        </a>
+        
+        <a href="ranking.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-trophy"></i> Ranking</div>
+        </a>
+        <a href="contatos.html" class="nav-link">
+            <div class="nav-item">
+                <i class="fas fa-address-book"></i> Contatos
+            </div>
+        </a>
+    </nav>
+</aside>
+        <main class="feed-container">
+            
+            <div class="community-header">
+                <div class="community-info">
+                    <h1>Curitiba - PR</h1>
+                    <p><i class="fas fa-map-marker-alt"></i> 12.405 membros ativos na região</p>
+                </div>
+                <button class="btn-pill-outline">Mudar Cidade</button>
+            </div>
+
+            <section class="create-post-card">
+                <div class="post-input-row">
+                    <img src="https://i.pravatar.cc/100?u=me" class="avatar-pill">
+                    <input type="text" placeholder="O que está acontecendo na comunidade pet?">
+                </div>
+                <div class="post-actions">
+                    <button class="action-pill"><i class="fas fa-camera"></i> Foto/Vídeo</button>
+                    <button class="action-pill alert-red-text"><i class="fas fa-exclamation-triangle"></i> Alerta Urgente</button>
+                    <button class="btn-pill-blue">Postar</button>
+                </div>
+            </section>
+
+            <div class="feed-list">
+                
+                <article class="post-card official-post">
+                    <header class="post-header">
+                        <img src="https://i.pravatar.cc/100?u=gov" class="avatar-pill">
+                        <div class="post-meta">
+                            <h3>Secretaria de Saúde Animal <i class="fas fa-check-circle verified"></i></h3>
+                            <span>Publicado agora • Curitiba</span>
+                        </div>
+                    </header>
+                    <div class="post-content">
+                        <h2>💉 Campanha de Vacinação Antirrábica 2026</h2>
+                        <p>Atenção tutores! A partir de segunda-feira, teremos postos de vacinação gratuita nos bairros: Batel, Mercês, Centro Cívico e Portão. Não esqueça a carteirinha digital do PeTinder!</p>
+                        <div class="post-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80">
+                        </div>
+                    </div>
+                    <footer class="post-footer">
+                        <button class="footer-btn"><i class="fas fa-share"></i> Compartilhar</button>
+                        <button class="footer-btn"><i class="fas fa-info-circle"></i> Ver Locais</button>
+                    </footer>
+                </article>
+
+                <article class="post-card alert-post">
+                    <header class="post-header">
+                        <img src="https://i.pravatar.cc/100?u=ana" class="avatar-pill">
+                        <div class="post-meta">
+                            <h3>Ana Paula Martins</h3>
+                            <span>Há 2 horas • Bigorrilho</span>
+                        </div>
+                    </header>
+                    <div class="post-content">
+                        <p class="alert-text"><strong>🚨 PET PERDIDO:</strong> Pessoal, meu Golden (Thor) escapou hoje próximo ao Parque Barigui. Ele é dócil mas está assustado. Se virem, por favor me chamem!</p>
+                    </div>
+                    <footer class="post-footer">
+                        <button class="footer-btn red-btn"><i class="fas fa-phone"></i> Contatar Ana</button>
+                    </footer>
+                </article>
+
+                <article class="post-card">
+                    <header class="post-header">
+                        <img src="https://i.pravatar.cc/100?u=bruno" class="avatar-pill">
+                        <div class="post-meta">
+                            <h3>Bruno Oliveira</h3>
+                            <span>Há 5 horas • Santa Felicidade</span>
+                        </div>
+                    </header>
+                    <div class="post-content">
+                        <p>Dia de sol com o Apollo! Alguém mais vai estar no Parcão do Museu Oscar Niemeyer hoje à tarde? ☀️🐾</p>
+                        <div class="post-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=800&q=80">
+                        </div>
+                    </div>
+                    <footer class="post-footer">
+                        <button class="footer-btn"><i class="far fa-heart"></i> 42</button>
+                        <button class="footer-btn"><i class="far fa-comment"></i> 15</button>
+                    </footer>
+                </article>
+
+            </div>
+        </main>
+
+        <aside class="widgets-area">
+            <div class="widget-card">
+                <h3>Eventos em Curitiba</h3>
+                
+                <div class="event-item">
+                    <div class="event-date">15<br><span>MAR</span></div>
+                    <div class="event-info">
+                        <strong>Cãominhada no Tingui</strong>
+                        <p>Concentração às 09h</p>
+                    </div>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-date">22<br><span>MAR</span></div>
+                    <div class="event-info">
+                        <strong>Feira de Adoção (Shopping)</strong>
+                        <p>Piso L2 - 10h às 18h</p>
+                    </div>
+                </div>
+
+                <div class="event-item highlight-red">
+                    <div class="event-date">01<br><span>ABR</span></div>
+                    <div class="event-info">
+                        <strong>Dia V: Vacinação Geral</strong>
+                        <p>Vários pontos - Grátis</p>
+                    </div>
+                </div>
+
+                <div class="event-item">
+                    <div class="event-date">10<br><span>ABR</span></div>
+                    <div class="event-info">
+                        <strong>Workshop de Adestramento</strong>
+                        <p>Parque Barigui - Grátis</p>
+                    </div>
+                </div>
+
+                <button class="btn-text-full">Ver todos os eventos</button>
+            </div>
+        </aside>
+
+    </div>
+    <script src="js/components.js"></script>
+                        
+            <script src="js/notificacoes.js"></script>
+            <script src="js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeTinder - Meus Pets</title>
+   <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+
+   <header class="top-nav">
+<button class="menu-mobile-btn" id="openSidebar">
+    <i class="fas fa-bars"></i>
+</button>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+   
+    <a href="home.html" class="logo">
+        <i class="fas fa-paw"></i> PeTinder
+    </a>
+
+    <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Pesquisar comunidades...">
+    </div>
+
+    <div class="user-actions">
+        <a href="home.html" class="nav-icon-btn" title="Início">
+            <i class="fas fa-home"></i>
+        </a>
+
+       
+        <a href="mensagens.html" class="nav-icon-btn" title="Mensagens">
+            <i class="fas fa-comment-dots"></i>
+            <span class="msg-badge">2</span>
+        </a>
+
+        <div style="position: relative; display: flex;">
+            <button class="nav-icon-btn" id="notifBtn">
+                <i class="fas fa-bell"></i>
+                <span class="notif-badge">3</span>
+            </button>
+            <div class="notif-dropdown" id="notifDropdown"></div>
+        </div>
+
+        <a href="configuracoes.html" class="nav-icon-btn" title="Configurações">
+            <i class="fas fa-cog"></i>
+        </a>
+    </div>
+</header>
+
+    <div class="main-container">
+        
+   <aside class="sidebar">
+    <nav class="mobile-nav">
+        <a href="home.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-home"></i> Home</div>
+        </a>
+              
+        
+        <a href="perguntas.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-question-circle"></i> Questões</div>
+        </a>
+        
+        <a href="tags.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-tag"></i> Tags</div>
+        </a>
+        
+        <a href="ranking.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-trophy"></i> Ranking</div>
+        </a>
+        <a href="contatos.html" class="nav-link">
+            <div class="nav-item">
+                <i class="fas fa-address-book"></i> Contatos
+            </div>
+        </a>
+    </nav>
+</aside>
+    <div class="main-container">
+        <main class="feed">
+    <div style="margin-bottom: 20px;">
+        <h2 style="color: var(--primary-color);"><i class="fas fa-paw"></i> Meus Pets</h2>
+    </div>
+
+    <div class="pets-grid">
+        
+      <a href="javascript:void(0)" class="add-pet-card" onclick="abrirModalCadastro()">
+        <i class="fas fa-plus-circle"></i>
+        <span>Adicionar Novo Pet</span>
+    </a>
+
+        <div class="pet-card">
+            <img src="https://placedog.net/400/300" class="pet-image" alt="Rex">
+            <div class="pet-info">
+                <h3>Rex</h3>
+                <p>Golden Retriever • 2 anos</p>
+                <div class="pet-actions">
+                    <button class="btn-edit"><i class="fas fa-edit"></i> Editar</button>
+                    <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="pet-card">
+            <img src="https://cataas.com/cat?width=400&height=220" class="pet-image" alt="Luna">
+            <div class="pet-info">
+                <h3>Luna</h3>
+                <p>Siamês • 1 ano</p>
+                <div class="pet-actions">
+                    <button class="btn-edit"><i class="fas fa-edit"></i> Editar</button>
+                    <button class="btn-delete"><i class="fas fa-trash"></i></button>
+                </div>
+
+                
+            </div>
+        </div>
+        <div class="pet-card">
+    <img src="https://placedog.net/400/210" class="pet-image">
+    <div class="pet-info">
+        <div>
+            <h3>Nome do Pet</h3>
+            <p>Espécie • Idade</p>
+        </div>
+        
+        <div class="pet-actions">
+            <button class="btn-edit">Editar Perfil</button>
+            <button class="btn-delete"><i class="fas fa-trash"></i></button>
+        </div>
+    </div>
+</div>
+
+    </div>
+</main>
+    </div>
+
+    <div id="modalCadastro" class="modal-overlay">
+        <div class="modal-content" style="max-width: 500px;">
+            <div class="modal-header">
+                <h2>Novo Pet</h2>
+                <button class="close-btn" onclick="fecharModalCadastro()">&times;</button>
+            </div>
+            <form id="petForm" onsubmit="salvarPet(event)">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Nome do Pet</label>
+                        <input type="text" id="nome" required placeholder="Ex: Thor">
+                    </div>
+                    <div class="form-group">
+                        <label>Espécie</label>
+                        <select id="especie">
+                            <option value="Cão">Cão</option>
+                            <option value="Gato">Gato</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Porte</label>
+                        <select id="porte">
+                            <option value="Pequeno">Pequeno</option>
+                            <option value="Médio">Médio</option>
+                            <option value="Grande">Grande / Gigante</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Link da Foto (URL)</label>
+                        <input type="url" id="foto" placeholder="https://imagem-do-pet.jpg">
+                    </div>
+                    <button type="submit" class="btn-pill-main" style="width:100%">Finalizar Cadastro</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<script>
+    // Unificando a função de abrir: agora ela usa a classe 'active' que definimos no CSS
+    function abrirModalCadastro() {
+        const modal = document.getElementById('modalCadastro');
+        if (modal) {
+            modal.classList.add('active');
+        }
+    }
+
+    // Unificando a função de fechar
+    function fecharModalCadastro() {
+        const modal = document.getElementById('modalCadastro');
+        if (modal) {
+            modal.classList.remove('active');
+        }
+    }
+
+    function salvarPet(event) {
+        event.preventDefault();
+        
+        // Pegar valores dos inputs
+        const nome = document.getElementById('nome').value;
+        const especie = document.getElementById('especie').value;
+        const porte = document.getElementById('porte').value;
+        
+        // Link de foto reserva caso o usuário não mande um (usando o Cataas que funciona!)
+        const fotoPadrao = `https://cataas.com/cat?width=400&height=300&random=${Math.random()}`;
+        const foto = document.getElementById('foto').value || fotoPadrao;
+
+        // Selecionar a grid
+        const grid = document.getElementById('meusPetsGrid');
+        if (!grid) {
+            console.error("Grid 'meusPetsGrid' não encontrada!");
+            return;
+        }
+
+        // Criar o card com as classes do nosso CSS moderno
+        const novoCard = document.createElement('div');
+        novoCard.className = 'pet-card';
+        novoCard.innerHTML = `
+            <img src="${foto}" class="pet-image" alt="${nome}">
+            <div class="pet-info">
+                <div>
+                    <h3>${nome}</h3>
+                    <p>${especie} • ${porte}</p>
+                </div>
+                <div class="pet-actions">
+                    <button class="btn-edit" onclick="alert('Editar ${nome}')">Editar Perfil</button>
+                    <button class="btn-delete" onclick="this.closest('.pet-card').remove()">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+        `;
+
+        // Adicionar o novo card antes do botão de "Adicionar Novo"
+        // (Assume-se que o botão de adicionar é o último elemento da grid)
+        const botaoAdicionar = grid.querySelector('.add-pet-card');
+        if (botaoAdicionar) {
+            grid.insertBefore(novoCard, botaoAdicionar);
+        } else {
+            grid.appendChild(novoCard);
+        }
+
+        // Fechar modal e limpar formulário
+        fecharModalCadastro();
+        document.getElementById('petForm').reset();
+    }
+</script>
+
+
+    <script>
+        async function deletarPet(id) {
+    if (!confirm("Tem certeza que deseja remover este pet?")) return;
+
+    try {
+        const response = await fetch(`http://localhost:3000/pets/${id}`, {
+            method: 'DELETE'
+        });
+
+        if (response.ok) {
+            // Recarrega a lista para sumir o card
+            carregarPets(); 
+        } else {
+            alert("Erro ao deletar o pet.");
+        }
+    } catch (error) {
+        console.error("Erro na requisição:", error);
+    }
+}
+    </script>
+
+    <script src="js/components.js"></script>
+                        
+            <script src="js/notificacoes.js"></script>
+            <script src="js/menu.js"></script>
+</body>
+</html>

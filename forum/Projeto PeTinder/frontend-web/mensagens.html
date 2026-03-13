@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeTinder - Mensagens</title>
+ <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header class="top-nav">
+<button class="menu-mobile-btn" id="openSidebar">
+    <i class="fas fa-bars"></i>
+</button>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+   
+    <a href="home.html" class="logo">
+        <i class="fas fa-paw"></i> PeTinder
+    </a>
+
+    <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Pesquisar comunidades...">
+    </div>
+
+    <div class="user-actions">
+        <a href="home.html" class="nav-icon-btn" title="Início">
+            <i class="fas fa-home"></i>
+        </a>
+
+       
+        <a href="mensagens.html" class="nav-icon-btn" title="Mensagens">
+            <i class="fas fa-comment-dots"></i>
+            <span class="msg-badge">2</span>
+        </a>
+
+        <div style="position: relative; display: flex;">
+            <button class="nav-icon-btn" id="notifBtn">
+                <i class="fas fa-bell"></i>
+                <span class="notif-badge">3</span>
+            </button>
+            <div class="notif-dropdown" id="notifDropdown"></div>
+        </div>
+
+        <a href="configuracoes.html" class="nav-icon-btn" title="Configurações">
+            <i class="fas fa-cog"></i>
+        </a>
+    </div>
+</header>
+
+    <div class="main-container">
+        
+   <aside class="sidebar">
+    <nav class="mobile-nav">
+        <a href="home.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-home"></i> Home</div>
+        </a>
+              
+        
+        <a href="perguntas.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-question-circle"></i> Questões</div>
+        </a>
+        
+        <a href="tags.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-tag"></i> Tags</div>
+        </a>
+        
+        <a href="ranking.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-trophy"></i> Ranking</div>
+        </a>
+        <a href="contatos.html" class="nav-link">
+            <div class="nav-item">
+                <i class="fas fa-address-book"></i> Contatos
+            </div>
+        </a>
+    </nav>
+</aside>
+        <div class="chat-center-container">
+            <main class="chat-wrapper">
+                
+                <section class="chat-window">
+                    <header class="chat-header">
+                        <strong>Ricardo Silva</strong>
+                        <span class="status-online"><i class="fas fa-circle"></i> Online agora</span>
+                    </header>
+
+                    <div class="message-content">
+                        <div class="msg received"><p>Olá! Vi que você se interessou pela Mel.</p><span class="time">10:45</span></div>
+                        <div class="msg sent"><p>Olá, Ricardo! Sim, gostaria de saber como ela se comporta.</p><span class="time">10:47</span></div>
+                        <div class="msg received"><p>Ela é super tranquila! Convive bem com cães e gatos.</p><span class="time">10:48</span></div>
+                        <div class="msg received"><p>Inclusive, acabei de liberar o acesso ao prontuário dela.</p><span class="time">10:49</span></div>
+                        <div class="msg sent"><p>Perfeito! Vou conferir o tipo sanguíneo agora.</p><span class="time">10:52</span></div>
+                        <div class="msg received"><p>Ela é doadora inclusive, o que ajuda muito em emergências.</p><span class="time">10:53</span></div>
+                    </div>
+
+                    <footer class="chat-input-area">
+                        <div class="input-container">
+                            <input type="text" placeholder="Escreva sua mensagem...">
+                            <button class="btn-send-pill"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </footer>
+                </section>
+                
+                <section class="chat-sidebar">
+                    <h2 class="sidebar-mini-title">Conversas</h2>
+                    <div class="chat-list">
+                        
+                        <div class="chat-preview active">
+                            <img src="https://i.pravatar.cc/100?u=2" class="avatar-round">
+                            <div class="preview-info">
+                                <h3>Ricardo Silva</h3>
+                                <p>Ela é doadora inclusive...</p>
+                            </div>
+                        </div>
+
+                        <div class="chat-preview">
+                            <img src="https://i.pravatar.cc/100?u=1" class="avatar-round">
+                            <div class="preview-info">
+                                <h3>Dra. Ana (Vet)</h3>
+                                <p>O exame de sangue ficou pronto.</p>
+                            </div>
+                        </div>
+
+                        <div class="chat-preview">
+                            <img src="https://i.pravatar.cc/100?u=3" class="avatar-round">
+                            <div class="preview-info">
+                                <h3>Clínica PetLife</h3>
+                                <p>Confirmamos seu horário de amanhã.</p>
+                            </div>
+                        </div>
+
+                        <div class="chat-preview">
+                            <img src="https://i.pravatar.cc/100?u=4" class="avatar-round">
+                            <div class="preview-info">
+                                <h3>Juliana Mendes</h3>
+                                <p>Obrigada por cuidar do gatinho!</p>
+                            </div>
+                        </div>
+
+                        <div class="chat-preview">
+                            <img src="https://i.pravatar.cc/100?u=5" class="avatar-round">
+                            <div class="preview-info">
+                                <h3>Marcos Adotante</h3>
+                                <p>Tenho interesse no Thor.</p>
+                            </div>
+                        </div>
+
+                        <div class="chat-preview">
+                            <img src="https://i.pravatar.cc/100?u=6" class="avatar-round">
+                            <div class="preview-info">
+                                <h3>Hospet Batel</h3>
+                                <p>O banho e tosa está finalizado.</p>
+                            </div>
+                        </div>
+
+                        <div class="chat-preview">
+                            <img src="https://i.pravatar.cc/100?u=7" class="avatar-round">
+                            <div class="preview-info">
+                                <h3>Beatriz Luz</h3>
+                                <p>Pode me passar o endereço?</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+    <script src="js/components.js"></script>
+                        
+            <script src="js/notificacoes.js"></script>
+            <script src="js/menu.js"></script>
+</body>
+</html>
