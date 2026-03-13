@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeTinder - Regras da Comunidade</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <header class="top-nav">
+        <div class="logo"><i class="fas fa-paw"></i> PeTinder</div>
+        <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Buscar nas regras...">
+        </div>
+        <div class="user-settings">
+          <div class="notification-container">
+    <button class="nav-icon-btn" id="notifBtn" title="Notificações">
+        <i class="fas fa-bell"></i>
+        <span class="notif-badge">3</span>
+    </button>
+    
+    <div class="notif-dropdown" id="notifDropdown">
+        <div class="notif-header">Notificações</div>
+        <div class="notif-item">🐶 **Mel** curtiu a foto do seu pet!</div>
+        <div class="notif-item">📅 Evento: "Cãominhada" amanhã às 10h.</div>
+        <div class="notif-item">⚠️ Vacina de reforço pendente.</div>
+        <a href="#" class="notif-footer">Ver todas</a>
+    </div>
+
+            <a href="home.html"><i class="fas fa-home"></i></a>
+
+   
+        </div>
+    </header>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <nav class="mobile-nav">
+                <a href="home.html" class="nav-link">
+                    <div class="nav-item"><i class="fas fa-home"></i> Home</div>
+                </a>
+                <p class="menu-label">MENU</p>
+                <a href="#" class="nav-link">
+                    <div class="nav-item active"><i class="fas fa-gavel"></i> Regras</div>
+                </a>
+                </nav>
+        </aside>
+
+        <main class="feed">
+            <div class="post-card">
+                <h2 style="color: var(--primary-color);"><i class="fas fa-shield-dog"></i> Diretrizes da Comunidade</h2>
+                <p>Para garantir a melhor experiência para todos os pets e humanos, siga nossas normas:</p>
+                <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+
+                <div class="rule-item">
+                    <h3>1. Respeito Acima de Tudo</h3>
+                    <p>Trate todos os usuários com educação. Não toleramos comentários ofensivos ou discurso de ódio.</p>
+                </div>
+
+                <div class="rule-item" style="margin-top: 20px;">
+                    <h3>2. Veracidade nas Informações</h3>
+                    <p>Certifique-se de que os dados do pet (idade, raça, saúde) sejam reais. Adoção é coisa séria!</p>
+                </div>
+
+                <div class="rule-item" style="margin-top: 20px;">
+                    <h3>3. Fotos Apropriadas</h3>
+                    <p>Poste apenas fotos relacionadas a pets. Fotos inadequadas serão removidas e a conta banida.</p>
+                </div>
+
+                <div class="rule-item" style="margin-top: 20px;">
+                    <h3>4. Segurança no Encontro</h3>
+                    <p>Sempre realize visitas de adoção em locais públicos e seguros. O PeTinder não se responsabiliza por encontros externos.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/notificacoes.js"></script>
+</body>
+</html>

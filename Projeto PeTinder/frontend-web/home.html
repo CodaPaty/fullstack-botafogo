@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeTinder - Home</title>
+   <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+</head>
+<body>
+<header class="top-nav">
+<button class="menu-mobile-btn" id="openSidebar">
+    <i class="fas fa-bars"></i>
+</button>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+   
+    <a href="home.html" class="logo">
+        <i class="fas fa-paw"></i> PeTinder
+    </a>
+
+    <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Pesquisar comunidades...">
+    </div>
+
+    <div class="user-actions">
+        <a href="home.html" class="nav-icon-btn" title="Início">
+            <i class="fas fa-home"></i>
+        </a>
+
+       
+        <a href="mensagens.html" class="nav-icon-btn" title="Mensagens">
+            <i class="fas fa-comment-dots"></i>
+            <span class="msg-badge">2</span>
+        </a>
+
+        <div style="position: relative; display: flex;">
+            <button class="nav-icon-btn" id="notifBtn">
+                <i class="fas fa-bell"></i>
+                <span class="notif-badge">3</span>
+            </button>
+            <div class="notif-dropdown" id="notifDropdown"></div>
+        </div>
+
+        <a href="configuracoes.html" class="nav-icon-btn" title="Configurações">
+            <i class="fas fa-cog"></i>
+        </a>
+    </div>
+</header>
+
+    <div class="main-container">
+        
+   <aside class="sidebar">
+    <nav class="mobile-nav">
+        <a href="home.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-home"></i> Home</div>
+        </a>
+              
+        
+        <a href="perguntas.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-question-circle"></i> Questões</div>
+        </a>
+        
+        <a href="tags.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-tag"></i> Tags</div>
+        </a>
+        
+        <a href="ranking.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-trophy"></i> Ranking</div>
+        </a>
+        <a href="contatos.html" class="nav-link">
+            <div class="nav-item">
+                <i class="fas fa-address-book"></i> Contatos
+            </div>
+        </a>
+    </nav>
+</aside>
+
+        <main class="feed">
+            <div class="feed-filters">
+                <button class="filter-btn active">New</button>
+                <button class="filter-btn">Top</button>
+                <button class="filter-btn">Hot</button>
+            </div>
+
+            <article class="post-card">
+                <div class="post-header">
+                    <img src="https://placedog.net/40/40" alt="Avatar" class="avatar">
+                    <div class="post-info">
+                        <strong>Juliana</strong>
+                        <span>6 min ago</span>
+                    </div>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+                <h3>Meu gato está urinando vermelho, o que pode ser?</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                <div class="post-tags">
+                    <span>saúde</span> <span>gatos</span>
+                </div>
+                <div class="post-footer">
+                    <i class="far fa-bookmark"></i>
+                    <div class="stats">
+                        <span><i class="far fa-eye"></i> 125</span>
+                        <span><i class="far fa-comment"></i> 15</span>
+                        <span><i class="fas fa-arrow-up"></i> 155</span>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <aside class="widgets">
+            <div class="widget-box">
+                <h4><i class="far fa-star"></i> Posts Importantes</h4>
+                <ul>
+                    <li><a href="regras.html">Regras da comunidade</a></li>
+                </ul>
+            </div>
+            <div class="widget-box">
+                <h4><i class="fas fa-link"></i> Links</h4>
+                <ul>
+                    <li><a href="ajuda.html">Ajuda</a></li>
+                    <li><a href="#">Melhores práticas</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+             <script src="js/components.js"></script>
+                        
+            <script src="js/notificacoes.js"></script>
+            <script src="js/menu.js"></script>
+
+</body>
+</html>

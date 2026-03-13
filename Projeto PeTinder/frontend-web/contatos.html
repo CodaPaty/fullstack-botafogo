@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>PeTinder - Contatos</title>
+   <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+   <header class="top-nav">
+<button class="menu-mobile-btn" id="openSidebar">
+    <i class="fas fa-bars"></i>
+</button>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+   
+    <a href="home.html" class="logo">
+        <i class="fas fa-paw"></i> PeTinder
+    </a>
+
+    <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Pesquisar comunidades...">
+    </div>
+
+    <div class="user-actions">
+        <a href="home.html" class="nav-icon-btn" title="Início">
+            <i class="fas fa-home"></i>
+        </a>
+
+       
+        <a href="mensagens.html" class="nav-icon-btn" title="Mensagens">
+            <i class="fas fa-comment-dots"></i>
+            <span class="msg-badge">2</span>
+        </a>
+
+        <div style="position: relative; display: flex;">
+            <button class="nav-icon-btn" id="notifBtn">
+                <i class="fas fa-bell"></i>
+                <span class="notif-badge">3</span>
+            </button>
+            <div class="notif-dropdown" id="notifDropdown"></div>
+        </div>
+
+        <a href="configuracoes.html" class="nav-icon-btn" title="Configurações">
+            <i class="fas fa-cog"></i>
+        </a>
+    </div>
+</header>
+
+    <div class="main-container">
+        
+   <aside class="sidebar">
+    <nav class="mobile-nav">
+        <a href="home.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-home"></i> Home</div>
+        </a>
+              
+        
+        <a href="perguntas.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-question-circle"></i> Questões</div>
+        </a>
+        
+        <a href="tags.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-tag"></i> Tags</div>
+        </a>
+        
+        <a href="ranking.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-trophy"></i> Ranking</div>
+        </a>
+        <a href="contatos.html" class="nav-link">
+            <div class="nav-item">
+                <i class="fas fa-address-book"></i> Contatos
+            </div>
+        </a>
+    </nav>
+</aside>
+
+        <main class="feed">
+            <h1 class="page-title">Contatos Disponíveis</h1>
+            
+            <div class="contact-list">
+                <div class="contact-card">
+                    <div class="contact-main-info">
+                        <img src="https://i.pravatar.cc/60?u=a" alt="Avatar" class="avatar-round">
+                        <div class="text-info">
+                            <h3>Carlos Eduardo</h3>
+                            <span>Doador • Rio de Janeiro, RJ</span>
+                        </div>
+                    </div>
+                    <div class="contact-actions">
+                        <button class="btn-pill-blue">Mensagem</button>
+                    </div>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-main-info">
+                        <img src="https://i.pravatar.cc/60?u=b" alt="Avatar" class="avatar-round">
+                        <div class="text-info">
+                            <h3>Clínica Pet Amigo</h3>
+                            <span>Clínica Veterinária • São Paulo, SP</span>
+                        </div>
+                    </div>
+                    <div class="contact-actions">
+                        <button class="btn-pill-blue">Agendar</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <aside class="widgets">
+            <div class="widget-box">
+                <h4>Sugestões</h4>
+                <p>Pessoas com pets da mesma raça que o seu.</p>
+            </div>
+        </aside>
+    </div>
+
+     <script src="js/components.js"></script>
+                        
+            <script src="js/notificacoes.js"></script>
+            <script src="js/menu.js"></script>
+</body>
+</html>

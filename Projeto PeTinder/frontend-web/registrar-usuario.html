@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeTinder - Criar Conta</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>/* ==========================================
+   1. CONFIGURAÇÕES GLOBAIS E VARIÁVEIS
+   ========================================== */
+:root {
+    --primary-color: #2980b9;    /* Azul Pet */
+    --secondary-color: #3498db;  /* Azul claro */
+    --bg-color: #f4f7f6;         /* Fundo cinza azulado */
+    --card-white: #ffffff;
+    --text-main: #2c3e50;
+    --text-muted: #7f8c8d;
+    --border-soft: #edf2f7;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-main);
+}
+
+/* ==========================================
+   2. PÁGINA DE LOGIN (TELA CHEIA)
+   ========================================== */
+body.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.login-container {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 380px;
+    max-height: 95vh;
+    overflow-y: auto;
+}
+
+.logo-login i { font-size: 50px; color: var(--primary-color); margin-bottom: 10px; }
+
+.input-group {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    background: #eee; /* O cinza que você gostou */
+    padding: 12px 15px;
+    border-radius: 8px;
+}
+
+.input-group i { color: var(--text-muted); margin-right: 10px; }
+
+.input-group input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+}
+
+.btn-login {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.btn-login:hover { background-color: var(--secondary-color); }
+.btn-login:active { transform: scale(0.98); background-color: #1c5982; }
+
+/* ==========================================
+   3. LAYOUT DO DASHBOARD (HOME/OUTRAS PAGINAS)
+   ========================================== */
+.top-nav {
+    background: var(--card-white);
+    padding: 10px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky; top: 0; z-index: 1000;
+}
+
+.main-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.sidebar { width: 240px; flex-shrink: 0; }
+.feed { flex: 1; min-width: 0; }
+
+/* ==========================================
+   4. REGRAS DE RESPONSIVIDADE (DINAMISMO)
+   ========================================== */
+
+/* --- TABLETS E MONITORES PEQUENOS (Abaixo de 992px) --- */
+@media (max-width: 992px) {
+    .main-container {
+        flex-direction: column; /* Empilha a lateral no topo/fundo */
+    }
+    
+    .sidebar {
+        width: 100%;
+        display: none; /* Esconde lateral no mobile para dar espaço */
+    }
+
+    .top-nav { padding: 10px 20px; }
+}
+
+/* --- CELULARES (Abaixo de 600px) --- */
+@media (max-width: 600px) {
+    .login-container {
+        padding: 25px 20px;
+        box-shadow: none; /* No celular fica mais limpo sem sombra pesada */
+    }
+
+    .logo-login h1 { font-size: 1.5rem; }
+
+    /* Ajuste para grids de fotos ou tags se existirem */
+    .pet-grid {
+        grid-template-columns: 1fr !important;
+    }
+}</style>
+</head>
+<body class="login-body">
+    <div class="login-container">
+        <div class="login-box">
+            <div class="logo-login">
+                <i class="fas fa-paw"></i>
+                <h1>PeTinder</h1>
+                <p>Comece sua jornada de adoção.</p>
+            </div>
+            <form id="registerForm">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Nome Completo" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" placeholder="E-mail" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Crie uma Senha" required>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-check-double"></i>
+                    <input type="password" placeholder="Confirme a Senha" required>
+                </div>
+                <button type="submit" id="loginBtn" class="btn-login">Entrar</button>
+            </form> <div class="login-footer">
+            <div class="login-footer">
+                
+
+                               <span>Já é da família PeTinder? <a href="index.html" class="signup-link">Entrar</a></span>
+            </div>
+        </div> </div> <script src="js/login.js"></script>
+
+        <script src="../js/registro.js"></script>
+</body>
+</html>

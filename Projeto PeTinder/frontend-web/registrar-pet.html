@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>PeTinder - Registrar Novo Pet</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+    --primary-blue: #4A90E2;
+    --soft-gray: #f8f9fa;
+    --medical-green: #2ecc71;
+    --text-dark: #2d3436;
+}
+
+body {
+    background-color: var(--soft-gray);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-dark);
+}
+
+.form-container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.form-header h2 {
+    color: var(--primary-blue);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.form-header p {
+    color: #636e72;
+    font-size: 0.95rem;
+}
+
+/* Estilização dos Fieldsets (Blocos de Informação) */
+fieldset {
+    border: none;
+    padding: 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+legend {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Inputs e Labels */
+.input-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #636e72;
+}
+
+input, select, textarea {
+    padding: 12px 15px;
+    border: 2px solid #edf2f7;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(74, 144, 226, 0.1);
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+small {
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    color: #b2bec3;
+    font-size: 0.8rem;
+}
+
+/* Rodapé e Botões */
+.form-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn-main {
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-secondary {
+    background: #f1f2f6;
+    color: #57606f;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-main:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3); }
+
+.upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.avatar-preview {
+    width: 120px;
+    height: 120px;
+    background: #edf2f7;
+    border: 3px dashed var(--primary-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: var(--primary-blue);
+    font-size: 2rem;
+    transition: all 0.3s ease;
+}
+
+.avatar-preview:hover {
+    background: #e2e8f0;
+    transform: scale(1.05);
+}
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <main class="form-container">
+            <div class="form-header">
+                <h2><i class="fas fa-plus-circle"></i> Novo Cadastro de Pet</h2>
+                <p>Preencha os dados para gerar o prontuário vitalício.</p>
+            </div>
+
+            <form action="#" class="pet-form" onsubmit="salvarPet(event)">
+                <fieldset>
+                    <legend>Avatar do Pet</legend>
+    <div class="upload-container">
+        <div class="avatar-preview" id="avatarPreview">
+            <i class="fas fa-camera"></i>
+        </div>
+        <input type="file" id="fotoInput" accept="image/*" style="display: none;" onchange="previewImage(event)">
+        <button type="button" class="btn-secondary" onclick="document.getElementById('fotoInput').click()">
+            Selecionar Foto
+        </button>
+    </div>
+                    <legend>1. Identificação Básica</legend>
+                    <div class="input-group">
+                        <label>Nome do Pet</label>
+                        <input type="text" placeholder="Ex: Thor" required>
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Espécie</label>
+                            <select>
+                                <option>Cachorro</option>
+                                <option>Gato</option>
+                                <option>Outro</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label>Tipo Sanguíneo</label>
+                            <input type="text" placeholder="Ex: DEA 1.1">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>2. Ancestralidade (Genética)</legend>
+                    <div class="input-row">
+                        <input type="text" placeholder="ID ou Nome do Pai">
+                        <input type="text" placeholder="ID ou Nome da Mãe">
+                    </div>
+                    <small>Isso ajuda no diagnóstico de doenças hereditárias.</small>
+                </fieldset>
+
+                <fieldset>
+                    <legend>3. Histórico de Saúde</legend>
+                    <textarea placeholder="Doenças prévias ou traumas conhecidos..."></textarea>
+                    <div class="input-group">
+                        <label>Clínicas que já frequentou</label>
+                        <input type="text" placeholder="Nome da Clínica ou Veterinário">
+                    </div>
+                </fieldset>
+
+                <div class="form-footer">
+                    <button type="button" class="btn-secondary">Cancelar</button>
+                    <button type="submit" class="btn-main">Finalizar Registro</button>
+                </div>
+            </form>
+        </main>
+    </div>
+
+    <script>
+        function salvarPet(event) {
+            event.preventDefault(); // Impede a página de recarregar
+            
+            // Aqui você poderia coletar os dados dos inputs se fosse salvar em um banco
+            // Mas para o protótipo, o importante é o redirecionamento:
+            
+            alert("Pet cadastrado com sucesso!");
+            window.location.href = "meus-pets.html"; // Volta para a tela de gestão
+        }
+
+        // Bônus: Fazer o botão cancelar também voltar
+        document.querySelector('.btn-secondary').onclick = function() {
+            window.location.href = "meus-pets.html";
+        };
+
+        function previewImage(event) {
+    const reader = new FileReader();
+    const preview = document.getElementById('avatarPreview');
+    
+    reader.onload = function() {
+        if (reader.readyState === 2) {
+            preview.innerHTML = `<img src="${reader.result}" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">`;
+        }
+    }
+    
+    reader.readAsDataURL(event.target.files[0]);
+}
+
+// Atualize sua função salvarPet para incluir a verificação
+function salvarPet(event) {
+    event.preventDefault();
+    
+    // Simulação de verificação
+    const foto = document.getElementById('fotoInput').files[0];
+    if (!foto) {
+        alert("Por favor, selecione uma foto para o seu pet!");
+        return;
+    }
+
+    alert("Pet cadastrado com sucesso!");
+    window.location.href = "meus-pets.html";
+}
+    </script>
+</body>
+</html>

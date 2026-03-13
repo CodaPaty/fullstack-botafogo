@@ -1,0 +1,375 @@
+:root {
+    --primary-color: #2980b9;    /* Azul Pet */
+    --secondary-color: #3498db;  /* Azul claro */
+    --bg-color: #f4f7f6;         /* Fundo cinza azulado */
+    --card-white: #ffffff;
+    --text-main: #2c3e50;        /* Texto principal */
+    --search-bg: #e3f2fd;        /* Azul leve da busca */
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    color: var(--text-main);
+}
+
+/* --- BARRA SUPERIOR (TOP NAV) --- */
+.top-nav {
+    background: var(--card-white);
+    padding: 10px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky; /* Mantém o topo fixo ao rolar */
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar {
+    background-color: var(--search-bg);
+    border: 1px solid #bbdefb;
+    border-radius: 20px;
+    padding: 8px 15px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.search-bar:focus-within {
+    background-color: #ffffff;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(41, 128, 185, 0.2);
+}
+
+.search-bar i {
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.search-bar input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    color: var(--text-main);
+}
+
+/* --- CONTAINER PRINCIPAL --- */
+.main-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+/* Sidebar */
+.sidebar { width: 220px; }
+
+.nav-item {
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.2s;
+    margin-bottom: 5px;
+    color: #636e72;
+}
+
+.nav-item:hover {
+    background-color: #e3f2fd;
+    color: var(--primary-color);
+}
+
+.nav-item.active {
+    background: var(--primary-color);
+    color: white;
+}
+
+.menu-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #b2bec3;
+    margin: 20px 0 10px 15px;
+    text-transform: uppercase;
+}
+
+/* Feed */
+.feed { flex: 1; }
+
+.post-card {
+    background: var(--card-white);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Avatar e User Info */
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #ddd;
+    margin-right: 12px;
+    border: 1px solid #eee;
+}
+
+/* Widgets e Settings */
+.user-settings i {
+    color: var(--primary-color);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.user-settings i:hover {
+    background-color: var(--search-bg);
+    transform: rotate(45deg);
+}
+
+.widgets { width: 280px; }
+
+.widget-box {
+    background: var(--card-white);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Estilização das Seções */
+.settings-section {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.settings-section h3 {
+    color: var(--primary-color);
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Upload de Avatar */
+.avatar-preview {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.avatar-preview img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+}
+
+.upload-label {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: var(--primary-color);
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/* Toggle Switch (Botão Ligar/Desligar) */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px; width: 14px;
+    left: 3px; bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider { background-color: var(--primary-color); }
+input:checked + .slider:before { transform: translateX(20px); }
+
+/* Botões */
+.btn-action {
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-action:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-save-main {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+/* Container relativo para posicionar o dropdown */
+.notification-container {
+    position: relative;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.nav-icon-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: var(--text-main);
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-icon-btn:hover { color: var(--primary-color); }
+
+/* O círculo vermelho das notificações */
+.notif-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #e74c3c;
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* Dropdown (Escondido por padrão) */
+.notif-dropdown {
+    display: none; /* Muda para block via JS */
+    position: absolute;
+    right: 0;
+    top: 35px;
+    background: white;
+    width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    z-index: 3000;
+    border: 1px solid #eee;
+}
+
+
+/* --- ADAPTAÇÃO PARA TABLETS E CELULARES (Telas menores que 992px) --- */
+@media (max-width: 992px) {
+    .main-container {
+        display: block; /* Tira o lado a lado da sidebar e feed */
+        padding: 10px;
+    }
+
+    .sidebar {
+        display: none; /* Esconde a sidebar lateral no celular para ganhar espaço */
+    }
+
+    .feed {
+        width: 100% !important; /* Feed ocupa a tela toda */
+        margin: 0;
+    }
+
+    .top-nav {
+        padding: 0 15px;
+    }
+
+    .search-bar {
+        display: none; /* Esconde a busca longa para não apertar os ícones */
+    }
+}
+
+/* --- ADAPTAÇÃO ESPECÍFICA PARA CELULARES (Telas menores que 600px) --- */
+@media (max-width: 600px) {
+    .post-card {
+        padding: 15px;
+        border-radius: 0; /* Cards sem borda arredondada aproveitam melhor o espaço lateral */
+        margin-bottom: 10px;
+    }
+
+    /* Ajuste das Tags para ficarem em 2 colunas no celular */
+    .tags-grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    /* O pódio do ranking precisa de menos espaço */
+    .podium-container {
+        gap: 10px;
+    }
+    
+    .rank-1 img { width: 90px; height: 90px; }
+}
+
+/* --- AJUSTE PARA MONITORES MUITO GRANDES (Prevenir que o site estique demais) --- */
+@media (min-width: 1400px) {
+    .main-container {
+        max-width: 1300px;
+        margin: 0 auto; /* Centraliza o site no meio de monitores gigantes */
+    }
+}
+
+.notif-header { padding: 15px; font-weight: bold; border-bottom: 1px solid #eee; }
+.notif-item { padding: 12px 15px; font-size: 13px; border-bottom: 1px solid #f9f9f9; cursor: pointer; }
+.notif-item:hover { background: #f0f7ff; }
+.notif-footer { display: block; text-align: center; padding: 10px; font-size: 12px; color: var(--primary-color); text-decoration: none; font-weight: bold; }
