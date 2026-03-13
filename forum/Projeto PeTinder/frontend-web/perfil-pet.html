@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeTinder - Perfil do Thor</title>
+ <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+   <header class="top-nav">
+<button class="menu-mobile-btn" id="openSidebar">
+    <i class="fas fa-bars"></i>
+</button>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+   
+    <a href="home.html" class="logo">
+        <i class="fas fa-paw"></i> PeTinder
+    </a>
+
+    <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Pesquisar comunidades...">
+    </div>
+
+    <div class="user-actions">
+        <a href="home.html" class="nav-icon-btn" title="Início">
+            <i class="fas fa-home"></i>
+        </a>
+
+       
+        <a href="mensagens.html" class="nav-icon-btn" title="Mensagens">
+            <i class="fas fa-comment-dots"></i>
+            <span class="msg-badge">2</span>
+        </a>
+
+        <div style="position: relative; display: flex;">
+            <button class="nav-icon-btn" id="notifBtn">
+                <i class="fas fa-bell"></i>
+                <span class="notif-badge">3</span>
+            </button>
+            <div class="notif-dropdown" id="notifDropdown"></div>
+        </div>
+
+        <a href="configuracoes.html" class="nav-icon-btn" title="Configurações">
+            <i class="fas fa-cog"></i>
+        </a>
+    </div>
+</header>
+
+    <div class="main-container">
+        
+   <aside class="sidebar">
+    <nav class="mobile-nav">
+        <a href="home.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-home"></i> Home</div>
+        </a>
+              
+        
+        <a href="perguntas.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-question-circle"></i> Questões</div>
+        </a>
+        
+        <a href="tags.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-tag"></i> Tags</div>
+        </a>
+        
+        <a href="ranking.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-trophy"></i> Ranking</div>
+        </a>
+        <a href="contatos.html" class="nav-link">
+            <div class="nav-item">
+                <i class="fas fa-address-book"></i> Contatos
+            </div>
+        </a>
+    </nav>
+</aside>
+
+        <main class="profile-container">
+            
+            <section class="profile-header-card">
+                <div class="cover-photo"></div>
+                <div class="profile-info-main">
+                    <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=300&q=80" class="pet-avatar-big">
+                    <div class="pet-titles">
+                        <h1>Thor <i class="fas fa-mars male"></i></h1>
+                        <p>Golden Retriever • 2 anos • Curitiba, PR</p>
+                    </div>
+                    <div class="profile-actions">
+                        <button class="btn-pill-blue"><i class="fas fa-heart"></i> Apadrinhar</button>
+                        <button class="btn-pill-outline"><i class="fas fa-envelope"></i> Mensagem</button>
+                    </div>
+                </div>
+            </section>
+
+            <div class="profile-grid">
+                
+                <div class="history-column">
+                    
+                    <div class="info-card">
+                        <h3><i class="fas fa-user-shield"></i> Tutor Atual</h3>
+                        <div class="owner-pill">
+                            <img src="https://i.pravatar.cc/100?u=ricardo" class="avatar-small">
+                            <div class="owner-data">
+                                <strong>Ricardo Silva</strong>
+                                <span>Tutor desde Jan/2025</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card mt-20">
+                        <h3><i class="fas fa-history"></i> Linha do Tempo</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="marker"></div>
+                                <p><strong>Família Oliveira</strong> (Lar Temporário)</p>
+                                <small>Ago/2024 - Dez/2024</small>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="marker"></div>
+                                <p><strong>ONG Viralata</strong> (Resgate)</p>
+                                <small>Jun/2024 - Jul/2024</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card mt-20">
+                        <h3><i class="fas fa-medkit"></i> Saúde</h3>
+                        <div class="health-badges">
+                            <span class="badge blood">Tipo: DEA 1.1 +</span>
+                            <span class="badge status">Vacinado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-column">
+                    <div class="info-card">
+                        <h3>Sobre o Thor</h3>
+                        <p class="bio-text">Thor é um cão dócil, resgatado em 2024. Ele passou por um período de recuperação com a Família Oliveira antes de encontrar seu lar definitivo com o Ricardo.</p>
+                    </div>
+
+                    <div class="info-card mt-20">
+                        <h3>Galeria de Fotos</h3>
+                        <div class="photo-grid-large">
+                            <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=250&q=80" class="gallery-img">
+                            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=250&q=80" class="gallery-img">
+                            <img src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=250&q=80" class="gallery-img">
+                            <img src="https://images.unsplash.com/photo-1591769225440-811ad7d62ca2?auto=format&fit=crop&w=250&q=80" class="gallery-img">
+                            <img src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=250&q=80" class="gallery-img">
+                            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=250&q=80" class="gallery-img">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="js/components.js"></script>
+                        
+            <script src="js/notificacoes.js"></script>
+            <script src="js/menu.js"></script>
+</body>
+</html>

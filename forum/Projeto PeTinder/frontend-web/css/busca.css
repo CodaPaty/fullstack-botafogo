@@ -1,0 +1,189 @@
+:root {
+    --primary-blue: #0984e3;
+    --donor-red: #d63031;
+    --adopt-green: #00b894;
+    --text-main: #2d3436;
+    --bg-light: #f8f9fa;
+    --border-soft: #f1f3f5;
+}
+
+/* BLINDAGEM DE IMAGENS */
+img { max-width: 100%; display: block; object-fit: cover; }
+
+.discovery-container {
+    flex: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* MAPA ESTILIZADO */
+.map-section { margin-bottom: 35px; }
+.map-wrapper-pill {
+    border-radius: 30px; /* Bordas arredondadas do PeTinder */
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--border-soft);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.map-floating-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    z-index: 10;
+    font-weight: 800;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    color: var(--primary-blue);
+}
+
+/* FILTROS LATERAIS */
+.filter-pills-area { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 0; }
+.pill-filter {
+    background: white; border: 1px solid var(--border-soft);
+    padding: 8px 16px; border-radius: 50px;
+    font-weight: 700; font-size: 0.8rem; cursor: pointer; color: #636e72;
+}
+.pill-filter.active { background: var(--primary-blue); color: white; border-color: var(--primary-blue); }
+
+.filter-checks { padding: 10px 0; display: flex; flex-direction: column; gap: 12px; }
+.check-container { font-weight: 700; font-size: 0.9rem; color: #636e72; cursor: pointer; }
+.donor-label { color: var(--donor-red); }
+
+/* GRID DE CARDS */
+.pet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* CARD PETINDER */
+.pet-card {
+    background: white;
+    border-radius: 28px;
+    overflow: hidden;
+    border: 1px solid var(--border-soft);
+    transition: 0.3s ease;
+}
+.pet-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
+
+.donor-highlight { border: 2px solid #ff7675; }
+
+.photo-box { height: 230px; position: relative; overflow: hidden; }
+.photo-box img { width: 100%; height: 100%; }
+
+/* BADGES SOBRE A FOTO */
+.badge-urgent { position: absolute; top: 15px; left: 15px; background: var(--donor-red); color: white; padding: 6px 12px; border-radius: 50px; font-weight: 900; font-size: 0.7rem; }
+.badge-species { position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.9); padding: 5px 12px; border-radius: 50px; font-weight: 800; font-size: 0.7rem; }
+.badge-adopt { position: absolute; top: 15px; left: 15px; background: var(--adopt-green); color: white; padding: 6px 12px; border-radius: 50px; font-weight: 900; font-size: 0.7rem; }
+
+/* CONTEÚDO DO CARD */
+.info-box { padding: 20px; }
+.name-line { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.name-line h3 { margin: 0; font-size: 1.2rem; font-weight: 900; }
+
+.breed-text { color: #636e72; font-size: 0.85rem; font-weight: 600; margin-bottom: 12px; }
+
+.tags-row { display: flex; gap: 8px; margin-bottom: 20px; }
+.tags-row span { background: var(--bg-light); padding: 5px 12px; border-radius: 50px; font-size: 0.7rem; font-weight: 800; color: #636e72; }
+
+/* AÇÕES PILL */
+.action-row { display: flex; gap: 10px; }
+.btn-pill-main { flex: 1; background: var(--primary-blue); color: white; border: none; padding: 12px; border-radius: 50px; font-weight: 800; cursor: pointer; }
+.btn-circle-action { width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--border-soft); background: white; color: var(--primary-blue); cursor: pointer; }
+
+.pet-grid {
+    display: grid;
+    /* Isso cria quantas colunas couberem na tela, com no mínimo 280px cada */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding-bottom: 50px; /* Espaço no fim para não colar no rodapé */
+}
+
+/* Garante que o texto da raça não quebre o layout se for muito longo */
+.breed-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.pet-card {
+    /* ... mantenha suas regras anteriores ... */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Garante que o grid se reorganize bonitinho quando um card some */
+.pet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    align-items: start;
+}
+.badge-species {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 5px 12px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 0.7rem;
+    color: var(--primary-blue);
+    z-index: 2;
+}
+
+/* MODAL OVERLAY */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 1000;
+}
+
+.modal-overlay.active {
+    opacity: 1; visibility: visible;
+}
+
+/* CAIXA DO MODAL */
+.modal-content {
+    background: white;
+    width: 90%; max-width: 400px;
+    padding: 30px;
+    border-radius: 28px;
+    text-align: center;
+    transform: scale(0.8);
+    transition: 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+.modal-header h2 { font-weight: 900; color: var(--primary-blue); margin: 0; }
+
+.success-icon {
+    font-size: 3rem;
+    color: var(--donor-red);
+    margin: 20px 0;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.close-btn {
+    position: absolute; top: 20px; right: 20px;
+    background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #ccc;
+}

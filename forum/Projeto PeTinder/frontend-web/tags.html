@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>PeTinder - Explorar Tags</title>
+   <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .tags-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .tag-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+            border: 1px solid #eee;
+            text-decoration: none;
+            color: inherit;
+        }
+        .tag-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: var(--primary-color);
+        }
+        .tag-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .tag-name { font-weight: bold; display: block; margin-bottom: 5px; }
+        .tag-count { font-size: 12px; color: #7f8c8d; }
+
+        /* Cores Temáticas para as Tags */
+        .color-dog { color: #e67e22; }
+        .color-cat { color: #9b59b6; }
+        .color-health { color: #2ecc71; }
+        .color-alert { color: #e74c3c; }
+    </style>
+</head>
+<body>
+
+   <header class="top-nav">
+<button class="menu-mobile-btn" id="openSidebar">
+    <i class="fas fa-bars"></i>
+</button>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+   
+    <a href="home.html" class="logo">
+        <i class="fas fa-paw"></i> PeTinder
+    </a>
+
+    <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Pesquisar comunidades...">
+    </div>
+
+    <div class="user-actions">
+        <a href="home.html" class="nav-icon-btn" title="Início">
+            <i class="fas fa-home"></i>
+        </a>
+
+       
+        <a href="mensagens.html" class="nav-icon-btn" title="Mensagens">
+            <i class="fas fa-comment-dots"></i>
+            <span class="msg-badge">2</span>
+        </a>
+
+        <div style="position: relative; display: flex;">
+            <button class="nav-icon-btn" id="notifBtn">
+                <i class="fas fa-bell"></i>
+                <span class="notif-badge">3</span>
+            </button>
+            <div class="notif-dropdown" id="notifDropdown"></div>
+        </div>
+
+        <a href="configuracoes.html" class="nav-icon-btn" title="Configurações">
+            <i class="fas fa-cog"></i>
+        </a>
+    </div>
+</header>
+
+    <div class="main-container">
+        
+   <aside class="sidebar">
+    <nav class="mobile-nav">
+        <a href="home.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-home"></i> Home</div>
+        </a>
+              
+        
+        <a href="perguntas.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-question-circle"></i> Questões</div>
+        </a>
+        
+        <a href="tags.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-tag"></i> Tags</div>
+        </a>
+        
+        <a href="ranking.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-trophy"></i> Ranking</div>
+        </a>
+        <a href="contatos.html" class="nav-link">
+            <div class="nav-item">
+                <i class="fas fa-address-book"></i> Contatos
+            </div>
+        </a>
+    </nav>
+</aside>
+
+        <main class="feed">
+            <div class="post-card">
+                <h2><i class="fas fa-hashtag"></i> Explorar Comunidades</h2>
+                <p>Encontre pets e conteúdos específicos através das nossas tags.</p>
+
+                <div class="tags-grid">
+                    <a href="#" class="tag-card">
+                        <i class="fas fa-dog tag-icon color-dog"></i>
+                        <span class="tag-name">Cachorros</span>
+                        <span class="tag-count">1.2k posts</span>
+                    </a>
+
+                    <a href="#" class="tag-card">
+                        <i class="fas fa-cat tag-icon color-cat"></i>
+                        <span class="tag-name">Gatos</span>
+                        <span class="tag-count">850 posts</span>
+                    </a>
+
+ 
+                    <a href="#" class="tag-card">
+                        <i class="fas fa-exclamation-circle tag-icon color-alert"></i>
+                        <span class="tag-name">Adoção Urgente</span>
+                        <span class="tag-count">120 posts</span>
+                    </a>
+
+                    <a href="#" class="tag-card">
+                        <i class="fas fa-lightbulb tag-icon" style="color: #f1c40f;"></i>
+                        <span class="tag-name">Dicas & Truques</span>
+                        <span class="tag-count">215 posts</span>
+                    </a>
+
+                        <a href="#" class="tag-card">
+                            <i class="fas fa-plus tag-icon color-alert"></i>
+                            <span class="tag-name">Saúde Animal</span>
+                            <span class="tag-count">430 posts</span>
+                        </a>
+                        
+                            <a href="#" class="tag-card">
+                                <i class="fas fa-film tag-icon" style="color: #3498db;"></i>
+                                <span class="tag-name">Filmes & Entretenimento</span>
+                                <span class="tag-count">312 posts</span>
+                            </a>
+
+                            <a href="#" class="tag-card">
+                                <i class="fas fa-medal tag-icon" style="color: #f1c40f;"></i>
+                                <span class="tag-name">Competições</span>
+                                <span class="tag-count">85 posts</span>
+                            </a>
+
+                            <a href="#" class="tag-card">
+                                <i class="fas fa-calendar-alt tag-icon" style="color: #e67e22;"></i>
+                                <span class="tag-name">Eventos</span>
+                                <span class="tag-count">150 posts</span>
+                            </a>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/components.js"></script>
+                        
+            <script src="js/notificacoes.js"></script>
+            <script src="js/menu.js"></script>
+</body>
+</html>

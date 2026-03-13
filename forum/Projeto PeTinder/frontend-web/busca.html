@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeTinder - Explorar Curitiba</title>
+  <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="top-nav">
+<button class="menu-mobile-btn" id="openSidebar">
+    <i class="fas fa-bars"></i>
+</button>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+   
+    <a href="home.html" class="logo">
+        <i class="fas fa-paw"></i> PeTinder
+    </a>
+
+    <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Pesquisar comunidades...">
+    </div>
+
+    <div class="user-actions">
+        <a href="home.html" class="nav-icon-btn" title="Início">
+            <i class="fas fa-home"></i>
+        </a>
+
+       
+        <a href="mensagens.html" class="nav-icon-btn" title="Mensagens">
+            <i class="fas fa-comment-dots"></i>
+            <span class="msg-badge">2</span>
+        </a>
+
+        <div style="position: relative; display: flex;">
+            <button class="nav-icon-btn" id="notifBtn">
+                <i class="fas fa-bell"></i>
+                <span class="notif-badge">3</span>
+            </button>
+            <div class="notif-dropdown" id="notifDropdown"></div>
+        </div>
+
+        <a href="configuracoes.html" class="nav-icon-btn" title="Configurações">
+            <i class="fas fa-cog"></i>
+        </a>
+    </div>
+</header>
+
+    <div class="main-container">
+        
+   <aside class="sidebar">
+    <nav class="mobile-nav">
+        <a href="home.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-home"></i> Home</div>
+        </a>
+              
+        
+        <a href="perguntas.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-question-circle"></i> Questões</div>
+        </a>
+        
+        <a href="tags.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-tag"></i> Tags</div>
+        </a>
+        
+        <a href="ranking.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-trophy"></i> Ranking</div>
+        </a>
+        <a href="contatos.html" class="nav-link">
+            <div class="nav-item">
+                <i class="fas fa-address-book"></i> Contatos
+            </div>
+        </a>
+    </nav>
+</aside>
+        <main class="discovery-container">
+            
+            <section class="map-section">
+                <div class="map-wrapper-pill">
+                    <div class="map-floating-badge">
+                        <i class="fas fa-paw"></i> Pets próximos ao Parque Barigui, Curitiba
+                    </div>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14411.933390311494!2d-49.31494301254316!3d-25.43887163813904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce38cd48679d9%3A0x67efc6913c19b88!2sParque%20Barigui!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </section>
+
+            <header class="list-header">
+                <h2>Pets em Destaque</h2>
+                <div class="view-toggle">
+                    <button class="toggle-btn active"><i class="fas fa-th-large"></i></button>
+                    <button class="toggle-btn"><i class="fas fa-list"></i></button>
+                </div>
+            </header>
+
+            <div class="pet-grid">
+    
+    <div class="pet-card donor-highlight">
+        <div class="photo-box">
+            <img src="https://images.unsplash.com/photo-1589944171255-41fe3aa71661?auto=format&fit=crop&w=400&q=80">
+            <span class="badge-urgent">DOADOR DEA 1.1+</span>
+            <span class="badge-species">Cão</span> </div>
+        <div class="info-box">
+            <div class="name-line"><h3>Zeca, 5a</h3><i class="fas fa-mars male"></i></div>
+            <p class="breed-text">Pastor Alemão • 800m</p>
+            <div class="tags-row"><span>Grande</span> <span>Treinado</span></div>
+            <div class="action-row">
+                <button class="btn-pill-main" onclick="abrirModal('Zeca', 'match')">Dar Match</button>
+                <button class="btn-circle-action"><i class="fas fa-comment"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="pet-card">
+        <div class="photo-box">
+            <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=400&q=80">
+            <span class="badge-species">Gato</span>
+        </div>
+        <div class="info-box">
+            <div class="name-line"><h3>Simba, 4a</h3><i class="fas fa-mars male"></i></div>
+            <p class="breed-text">Maine Coon • 2.5km</p>
+            <div class="tags-row"><span>Gigante</span> <span>Dócil</span></div>
+            <div class="action-row">
+                <button class="btn-pill-main" onclick="abrirModal('Simba', 'match')">Dar Match</button>
+                <button class="btn-circle-action"><i class="fas fa-comment"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="pet-card">
+        <div class="photo-box">
+            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=400&q=80">
+            <span class="badge-adopt">ADOTE-ME</span>
+            <span class="badge-species">Cão</span> </div>
+        <div class="info-box">
+            <div class="name-line"><h3>Luna, 2a</h3><i class="fas fa-venus female"></i></div>
+            <p class="breed-text">SRD • 1.2km</p>
+            <div class="tags-row"><span>Média</span> <span>Vacinada</span></div>
+            <div class="action-row">
+                <button class="btn-pill-main" onclick="abrirModal('Luna', 'adotar')">Quero Adotar</button>
+                <button class="btn-circle-action"><i class="fas fa-comment"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="pet-card">
+        <div class="photo-box">
+            <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=400&q=80">
+            <span class="badge-species">Cão</span> </div>
+        <div class="info-box">
+            <div class="name-line"><h3>Bernardo, 3a</h3><i class="fas fa-mars male"></i></div>
+            <p class="breed-text">Bernese • 3.1km</p>
+            <div class="tags-row"><span>Gigante</span> <span>Calmo</span></div>
+            <div class="action-row">
+                <button class="btn-pill-main" onclick="abrirModal('Bernardo', 'match')">Dar Match</button>
+                <button class="btn-circle-action"><i class="fas fa-comment"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="pet-card">
+        <div class="photo-box">
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=400&q=80">
+            <span class="badge-species">Gato</span>
+        </div>
+        <div class="info-box">
+            <div class="name-line"><h3>Mimi, 1a</h3><i class="fas fa-venus female"></i></div>
+            <p class="breed-text">Gato SRD • 500m</p>
+            <div class="tags-row"><span>Pequena</span> <span>Brincalhona</span></div>
+            <div class="action-row">
+                <button class="btn-pill-main" onclick="abrirModal('Mimi', 'match')">Dar Match</button>
+                <button class="btn-circle-action"><i class="fas fa-comment"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="pet-card">
+        <div class="photo-box">
+            <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=400&q=80">
+            <span class="badge-species">Cão</span> </div>
+        <div class="info-box">
+            <div class="name-line"><h3>Pudim, 2a</h3><i class="fas fa-mars male"></i></div>
+            <p class="breed-text">Pug • 1.8km</p>
+            <div class="tags-row"><span>Pequeno</span> <span>Fofo</span></div>
+            <div class="action-row">
+                <button class="btn-pill-main" onclick="abrirModal('Pudim', 'match')">Dar Match</button>
+                <button class="btn-circle-action"><i class="fas fa-comment"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="pet-card">
+        <div class="photo-box">
+            <img src="https://images.unsplash.com/photo-1513245533117-0e04a4b5b75d?auto=format&fit=crop&w=400&q=80">
+            <span class="badge-species">Gato</span>
+        </div>
+        <div class="info-box">
+            <div class="name-line"><h3>Floquinho, 4a</h3><i class="fas fa-mars male"></i></div>
+            <p class="breed-text">Siamês • 4.2km</p>
+            <div class="tags-row"><span>Médio</span> <span>Atento</span></div>
+            <div class="action-row">
+                <button class="btn-pill-main" onclick="abrirModal('Floquinho', 'match')">Dar Match</button>
+                <button class="btn-circle-action"><i class="fas fa-comment"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="pet-card donor-highlight">
+        <div class="photo-box">
+            <img src="https://images.unsplash.com/photo-1560743173-567a3b5658b1?auto=format&fit=crop&w=400&q=80">
+            <span class="badge-urgent">DOADOR DEA 1.1-</span>
+            <span class="badge-species">Cão</span> </div>
+        <div class="info-box">
+            <div class="name-line"><h3>Kyra, 3a</h3><i class="fas fa-venus female"></i></div>
+            <p class="breed-text">Doberman • 6km</p>
+            <div class="tags-row"><span>Grande</span> <span>Protetora</span></div>
+            <div class="action-row">
+                <button class="btn-pill-main" onclick="abrirModal('Kyra', 'match')">Dar Match</button>
+                <button class="btn-circle-action"><i class="fas fa-comment"></i></button>
+            </div>
+        </div>
+    </div>
+
+</div>
+             </main>
+    </div>
+    <script>
+// Variável global para guardar a espécie selecionada (padrão: todos)
+let especieAtual = 'todos';
+
+function filtrarPets(especie, botao) {
+    // Atualiza visual dos botões de espécie
+    const botoes = document.querySelectorAll('.pill-filter');
+    botoes.forEach(btn => btn.classList.remove('active'));
+    botao.classList.add('active');
+
+    especieAtual = especie;
+    aplicarFiltros();
+}
+
+function aplicarFiltros() {
+    const cards = document.querySelectorAll('.pet-card');
+    
+    // Pega todos os portes que estão marcados (checked)
+    const checkboxesPorte = document.querySelectorAll('.filtro-porte:checked');
+    const portesSelecionados = Array.from(checkboxesPorte).map(cb => cb.value.toLowerCase());
+
+    cards.forEach(card => {
+        const textoCard = card.innerText.toLowerCase();
+        
+        // Lógica 1: Verificar Espécie
+        const matchesEspecie = (especieAtual === 'todos' || textoCard.includes(especieAtual.toLowerCase()));
+        
+        // Lógica 2: Verificar Porte
+        // Se nenhum porte estiver marcado, mostramos todos dessa espécie. 
+        // Se houver marcados, o card precisa conter pelo menos um dos portes selecionados.
+        const matchesPorte = (portesSelecionados.length === 0 || portesSelecionados.some(porte => {
+            // Tratamento especial para "Médio" por causa do acento e "Grande/Gigante"
+            if (porte === "grande") return textoCard.includes("grande") || textoCard.includes("gigante");
+            return textoCard.includes(porte);
+        }));
+
+        // Exibição Final: Precisa passar nos dois filtros
+        if (matchesEspecie && matchesPorte) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+
+function abrirModal(nomePet, acao) {
+    const modal = document.getElementById('modalInteresse');
+    const titulo = document.getElementById('modalTitle');
+    const mensagem = document.getElementById('modalMessage');
+
+    if (acao === 'adotar') {
+        titulo.innerText = "Interesse em Adotar!";
+        mensagem.innerHTML = `Sua solicitação para adotar o(a) <strong>${nomePet}</strong> foi enviada ao tutor. <br><br>Fique de olho no seu chat!`;
+    } else {
+        titulo.innerText = "Match solicitado!";
+        mensagem.innerHTML = `Você demonstrou interesse em conhecer o(a) <strong>${nomePet}</strong>. Se o tutor aceitar, vocês poderão conversar.`;
+    }
+
+    modal.classList.add('active');
+}
+
+function fecharModal() {
+    document.getElementById('modalInteresse').classList.remove('active');
+}
+
+// Para fechar se clicar fora da caixa branca
+window.onclick = function(event) {
+    const modal = document.getElementById('modalInteresse');
+    if (event.target == modal) {
+        fecharModal();
+    }
+}
+</script>
+
+<div id="modalInteresse" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="modalTitle">Solicitação enviada!</h2>
+            <button class="close-btn" onclick="fecharModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="success-icon"><i class="fas fa-heartbeat"></i></div>
+            <p id="modalMessage">O dono do pet foi notificado e poderá iniciar uma conversa com você em breve.</p>
+            <button class="btn-pill-main" onclick="fecharModal()">Entendido</button>
+        </div>
+    </div>
+</div>
+<script src="js/components.js"></script>
+                        
+            <script src="js/notificacoes.js"></script>
+            <script src="js/menu.js"></script>
+</body>
+</html>

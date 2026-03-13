@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeTinder - Central de Ajuda</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .help-card { background: white; padding: 25px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .contact-form { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+        .contact-form input, .contact-form textarea, .contact-form select {
+            padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; outline: none;
+        }
+        .contact-form input:focus, .contact-form textarea:focus { border-color: var(--primary-color); }
+        .btn-send { background: var(--primary-color); color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        .btn-send:hover { background: var(--secondary-color); }
+        .emergency-box { background: #fff5f5; border-left: 5px solid #e74c3c; padding: 15px; border-radius: 4px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<header class="top-nav">
+<button class="menu-mobile-btn" id="openSidebar">
+    <i class="fas fa-bars"></i>
+</button>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+   
+    <a href="home.html" class="logo">
+        <i class="fas fa-paw"></i> PeTinder
+    </a>
+
+    <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Pesquisar comunidades...">
+    </div>
+
+    <div class="user-actions">
+        <a href="home.html" class="nav-icon-btn" title="Início">
+            <i class="fas fa-home"></i>
+        </a>
+
+       
+        <a href="mensagens.html" class="nav-icon-btn" title="Mensagens">
+            <i class="fas fa-comment-dots"></i>
+            <span class="msg-badge">2</span>
+        </a>
+
+        <div style="position: relative; display: flex;">
+            <button class="nav-icon-btn" id="notifBtn">
+                <i class="fas fa-bell"></i>
+                <span class="notif-badge">3</span>
+            </button>
+            <div class="notif-dropdown" id="notifDropdown"></div>
+        </div>
+
+        <a href="configuracoes.html" class="nav-icon-btn" title="Configurações">
+            <i class="fas fa-cog"></i>
+        </a>
+    </div>
+</header>
+
+    <div class="main-container">
+        
+   <aside class="sidebar">
+    <nav class="mobile-nav">
+        <a href="home.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-home"></i> Home</div>
+        </a>
+              
+        
+        <a href="perguntas.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-question-circle"></i> Questões</div>
+        </a>
+        
+        <a href="tags.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-tag"></i> Tags</div>
+        </a>
+        
+        <a href="ranking.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-trophy"></i> Ranking</div>
+        </a>
+        <a href="contatos.html" class="nav-link">
+            <div class="nav-item">
+                <i class="fas fa-address-book"></i> Contatos
+            </div>
+        </a>
+    </nav>
+</aside>
+
+        <main class="feed">
+            <div class="help-card">
+                <h2><i class="fas fa-headset"></i> Como podemos ajudar?</h2>
+                <p>Seja para uma sugestão, reclamação ou denúncia, nossa equipe está pronta para ouvir.</p>
+                
+                <div class="emergency-box">
+                    <h4 style="color: #c0392b; margin: 0;"><i class="fas fa-exclamation-triangle"></i> Denúncia Urgente?</h4>
+                    <p style="font-size: 14px; margin: 5px 0 0;">Se você presenciou maus-tratos ou perfis falsos, use a opção "Denúncia" no formulário abaixo.</p>
+                </div>
+
+                <form class="contact-form" id="helpForm">
+                    <label>Assunto do Contato</label>
+                    <select required>
+                        <option value="">Selecione uma opção...</option>
+                        <option value="reclamacao">Reclamação</option>
+                        <option value="denuncia">Denúncia de Usuário/Pet</option>
+                        <option value="ajuda">Dificuldade Técnica</option>
+                        <option value="outro">Outros Assuntos</option>
+                    </select>
+
+                    <label>Descreva o ocorrido</label>
+                    <textarea rows="5" placeholder="Explique detalhadamente para que possamos agir rápido..." required></textarea>
+
+                    <label>Anexar prova (print/foto)</label>
+                    <input type="file" accept="image/*">
+
+                    <button type="submit" class="btn-send">Enviar Mensagem</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById('helpForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("Sua mensagem foi enviada à administração! Responderemos em até 24 horas no seu e-mail.");
+            window.location.href = "../home.html";
+        });
+    </script>
+    <script src="js/notificacoes.js"></script>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeTinder - Configurações</title>
+    <link rel="stylesheet" href="css/style.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Estilo do Modal (Janela Flutuante) */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2000;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Grade de Fotos */
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.photo-item, .add-photo-card {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.add-photo-card {
+    border: 2px dashed var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.close-modal {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+        /* Estilos específicos para a página de ajustes */
+        .settings-container {
+            background: var(--card-white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 700px;
+            margin: 20px auto;
+        }
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .setting-info h4 { margin: 0; color: var(--text-main); }
+        .setting-info p { margin: 5px 0 0; font-size: 14px; color: #7f8c8d; }
+        
+        .btn-save {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        /* Estilização das Seções */
+.settings-section {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.settings-section h3 {
+    color: var(--primary-color);
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Upload de Avatar */
+.avatar-preview {
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.avatar-preview img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+}
+
+.upload-label {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: var(--primary-color);
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/* Toggle Switch (Botão Ligar/Desligar) */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px; width: 14px;
+    left: 3px; bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider { background-color: var(--primary-color); }
+input:checked + .slider:before { transform: translateX(20px); }
+
+/* Botões */
+.btn-action {
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-action:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-save-main {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+    </style>
+</head>
+<body>
+
+   <header class="top-nav">
+<button class="menu-mobile-btn" id="openSidebar">
+    <i class="fas fa-bars"></i>
+</button>
+
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+   
+    <a href="home.html" class="logo">
+        <i class="fas fa-paw"></i> PeTinder
+    </a>
+
+    <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Pesquisar comunidades...">
+    </div>
+
+    <div class="user-actions">
+        <a href="home.html" class="nav-icon-btn" title="Início">
+            <i class="fas fa-home"></i>
+        </a>
+
+       
+        <a href="mensagens.html" class="nav-icon-btn" title="Mensagens">
+            <i class="fas fa-comment-dots"></i>
+            <span class="msg-badge">2</span>
+        </a>
+
+        <div style="position: relative; display: flex;">
+            <button class="nav-icon-btn" id="notifBtn">
+                <i class="fas fa-bell"></i>
+                <span class="notif-badge">3</span>
+            </button>
+            <div class="notif-dropdown" id="notifDropdown"></div>
+        </div>
+
+        <a href="configuracoes.html" class="nav-icon-btn" title="Configurações">
+            <i class="fas fa-cog"></i>
+        </a>
+    </div>
+</header>
+
+    <div class="main-container">
+        
+   <aside class="sidebar">
+    <nav class="mobile-nav">
+        <a href="home.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-home"></i> Home</div>
+        </a>
+              
+        
+        <a href="perguntas.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-question-circle"></i> Questões</div>
+        </a>
+        
+        <a href="tags.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-tag"></i> Tags</div>
+        </a>
+        
+        <a href="ranking.html" class="nav-link">
+            <div class="nav-item"><i class="fas fa-trophy"></i> Ranking</div>
+        </a>
+        <a href="contatos.html" class="nav-link">
+            <div class="nav-item">
+                <i class="fas fa-address-book"></i> Contatos
+            </div>
+        </a>
+    </nav>
+</aside>
+    <div class="main-container">
+     <main class="main.settings-container">
+    <h2><i class="fas fa-sliders-h"></i> Configurações do PeTinder</h2>
+
+    <section class="settings-section">
+        <h3><i class="fas fa-user-circle"></i> Meu Perfil</h3>
+          <div class="setting-item">
+                 <div class="setting-info">
+                <h4>Foto do Perfil</h4>
+                <p>Clique na câmera para mudar seu avatar.</p>
+            </div>
+            </div>
+        <div class="setting-item avatar-upload-section">
+            <div class="avatar-preview">
+                <img src="../img/default-avatar.png" id="avatarPreview" alt="Avatar">
+                <label for="imageUpload" class="upload-label">
+                    <i class="fas fa-camera"></i>
+                </label>
+                <input type="file" id="imageUpload" accept="image/*" hidden>
+            </div>
+          
+           
+        </div>
+    </section>
+
+    <section class="settings-section">
+        <h3><i class="fas fa-lock"></i> Privacidade</h3>
+        <div class="setting-item">
+            <div class="setting-info">
+                <h4>Perfil do Usuário</h4>
+                <p>Tornar meu perfil visível para todos.</p>
+            </div>
+            <label class="switch">
+                <input type="checkbox" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="setting-item">
+            <div class="setting-info">
+                <h4>Informações do Pet</h4>
+                <p>Mostrar localização exata do pet nos posts.</p>
+            </div>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </section>
+
+    <section class="settings-section">
+        <h3><i class="fas fa-images"></i> Álbuns e Galeria</h3>
+        <div class="setting-item">
+            <div class="setting-info">
+                <h4>Meus Álbuns Pessoais</h4>
+                <p>Você possui 2 álbuns criados.</p>
+            </div>
+            <button class="btn-action"><i class="fas fa-plus"></i> Criar Álbum</button>
+        </div>
+        <div class="setting-item">
+            <div class="setting-info">
+                <h4>Álbuns do Pet</h4>
+                <p>Gerencie as fotos do seu melhor amigo.</p>
+            </div>
+            <button class="btn-action"><i class="fas fa-paw"></i> Gerenciar Fotos</button>
+        </div>
+    </section>
+
+    <button class="btn-save-main">Salvar Alterações</button>
+</main>
+
+
+<div id="albumModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3><i class="fas fa-images"></i> Gerenciar Álbum</h3>
+        <p>Selecione as fotos para o álbum do seu pet.</p>
+        
+        <div class="album-grid" id="albumGrid">
+            <label class="add-photo-card">
+                <i class="fas fa-plus"></i>
+                <input type="file" id="multiUpload" accept="image/*" multiple hidden>
+            </label>
+        </div>
+        <button class="btn-save-main" onclick="closeModal()">Concluir</button>
+    </div>
+</div>
+    </div>
+    <script>document.getElementById('imageUpload').addEventListener('change', function(event) {
+    const reader = new FileReader();
+    reader.onload = function() {
+        const output = document.getElementById('avatarPreview');
+        output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
+});
+
+// Abrir e fechar o modal
+const modal = document.getElementById("albumModal");
+const btnManage = document.querySelector(".btn-action"); // Seleciona o botão de gerenciar fotos
+
+btnManage.onclick = () => modal.style.display = "flex";
+document.querySelector(".close-modal").onclick = () => modal.style.display = "none";
+
+// Lógica de Upload Múltiplo
+document.getElementById('multiUpload').addEventListener('change', function(event) {
+    const files = event.target.files;
+    const grid = document.getElementById('albumGrid');
+
+    for (let i = 0; i < files.length; i++) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.classList.add('photo-item');
+            grid.insertBefore(img, grid.firstChild); // Adiciona a foto nova no início da grade
+        }
+        reader.readAsDataURL(files[i]);
+    }
+});
+
+
+
+</script>
+ <script src="js/components.js"></script>
+                        
+            <script src="js/notificacoes.js"></script>
+            <script src="js/menu.js"></script>
+</body>
+</html>
